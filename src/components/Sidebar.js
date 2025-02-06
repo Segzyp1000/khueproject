@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { links, Links2 } from '../data/dummy';
 import Logo from '../images/logo.png'
+import profile from "../images/profile.jpg"
 
 const Sidebar = () => {
   const normalLink =
@@ -34,7 +35,7 @@ const Sidebar = () => {
         ))}
       </div>
 
-      <div className=" mt-20 h-[7.5rem] w-[15rem] shadow-xl  border-b-8">
+      <div className=" mt-20 h-[7.5rem] w-[15rem] shadow-xl">
         {Links2.map(item => (
           <div key={item.title}>
             {item.Links2.map(link => (
@@ -46,6 +47,16 @@ const Sidebar = () => {
           </div>
         ))}
       </div>
+
+      <div className='flex w-[17rem] h-[5rem] mt-5 space-x-2'>
+        <img src={profile} alt='profile' className='w-[2rem] h-[2rem] mt-3'/>
+        <div>
+        <p>Kelvin Gate</p>
+        <p>kelvingate@mail.com</p>
+        </div>
+      
+      </div>
+
     </div>
   );
 };

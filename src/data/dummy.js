@@ -1,14 +1,20 @@
 import React from 'react';
 import { FiShoppingBag } from 'react-icons/fi';
 import { IoMdContacts } from 'react-icons/io';
-import { RiContactsLine } from 'react-icons/ri';
+import { RiBarChartBoxLine } from "react-icons/ri";
+import { CiHome } from "react-icons/ci"
+import { BsBookmarkCheck } from "react-icons/bs";
+import { CiStickyNote } from "react-icons/ci";
+import { FaUserPlus } from "react-icons/fa6";
+import { IoGridOutline } from "react-icons/io5";
+import { FaHeadphones } from "react-icons/fa";
 
 export const links = [
   {
     links: [
       {
         name: 'dashboard',
-        icon: <FiShoppingBag />
+        icon: <CiHome />
       }
     ]
   },
@@ -18,7 +24,7 @@ export const links = [
     links: [
       {
         name: 'user',
-        icon: <AiOutlineShoppingCart />
+        icon: <FiShoppingBag/>
       },
       {
         name: 'partner',
@@ -26,11 +32,11 @@ export const links = [
       },
       {
         name: 'campaign',
-        icon: <RiContactsLine />
+        icon: <BsBookmarkCheck  />
       },
       {
         name: 'referral',
-        icon: <RiContactsLine />
+        icon: <CiStickyNote />
       }
     ]
   },
@@ -40,14 +46,24 @@ export const links = [
     links: [
       {
         name: 'Products',
-        icon: <AiOutlineStock />
+        icon: <RiBarChartBoxLine/>
       },
       {
         name: 'Stores',
-        icon: <AiOutlineAreaChart />
+        icon: <RiBarChartBoxLine />
       }
     ]
-  }
+  },
+  {
+    title: 'Point Management',
+    links: [
+      {
+        name: 'Rewaard',
+        icon: <RiBarChartBoxLine/>
+      }
+     
+    ]
+  },
 ];
 
 export const Links2 = [
@@ -55,7 +71,7 @@ export const Links2 = [
     Links2: [
       {
         name: 'Manage Team',
-        icon: <AiOutlineAreaChart />
+        icon: <FaUserPlus/>
       }
     ]
   },
@@ -63,15 +79,15 @@ export const Links2 = [
     Links2: [
       {
         name: 'Audit Log',
-        icon: <AiOutlineAreaChart />
+        icon: <IoGridOutline/>
       }
     ]
   },
   {
     Links2: [
       {
-        name: 'Help',
-        icon: <AiOutlineAreaChart />
+        name: 'Help & First Step',
+        icon: <FaHeadphones/>
       }
     ]
   }

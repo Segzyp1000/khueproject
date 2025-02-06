@@ -9,9 +9,8 @@ const Dashboard = () => {
         <h1 className="text-[20px] font-semibold p-3 border-b shadow-sm w-full ">
           Dashboard
         </h1>
-        <div>button</div>
       </div>
-      <section className="grid grid-cols-4">
+      <section className="grid grid-cols-4 mt-5">
         <div className="col-start-1 -col-end-1 flex justify-between">
           <div>
             <h2 className="text-base font-semibold">👋Hey, Kevin.</h2>
