@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { links, Links2 } from '../data/dummy'
 import Logo from "../asset/logo.png"
+import profile from "../asset/profile.jpg"
 
 
 
@@ -47,7 +48,7 @@ const Sidebar = () => {
             ))}
               </div>
             
-        <div className=' mt-20 h-[7.5rem] w-[15rem] shadow-xl  border-b-8'>
+        <div className=' mt-20 h-[7.5rem] w-[15rem] shadow-xl '>
             {Links2.map((item) => (
               <div key={item.title}>
                 {item.Links2.map((link) => (
@@ -65,6 +66,18 @@ const Sidebar = () => {
               </div>
                
             ))}
+
+            <div className='flex w-[17rem] h-[5rem] m-3 '>
+            <img src={profile} alt='' className=' mt-7 object-contain w-[2rem] h-[2rem]'/>
+              <div className='flex flex-col mt-5 '>
+              <p>Segun Olowoyeye</p>
+              <p>mailseg@elijah.org</p>
+              </div>
+    
+         
+            
+            </div>
+
             </div> 
         
          
