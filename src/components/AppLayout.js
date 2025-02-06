@@ -3,7 +3,7 @@ import Sidebarr from './Sidebarr';
 
 const AppLayout = () => {
   return (
-    <div className="grid grid-cols-[272px_1fr] h-screen">
+    <div className="grid grid-cols-[264px_1fr] h-screen">
       <Sidebarr />
       <Outlet />
     </div>

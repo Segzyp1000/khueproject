@@ -1,7 +1,6 @@
 import React from 'react';
 import LineGraph from '../components/charts/LineGraph';
 import BarGraph from '../components/charts/BarGraph';
-import { Line } from 'react-chartjs-2';
 
 const Dashboard = () => {
   return (
