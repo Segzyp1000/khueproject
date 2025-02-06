@@ -1,24 +1,16 @@
 import React from 'react';
-import {  AiOutlineShoppingCart, AiOutlineAreaChart,  AiOutlineStock } from 'react-icons/ai';
-import { FiShoppingBag} from 'react-icons/fi';
+import { FiShoppingBag } from 'react-icons/fi';
 import { IoMdContacts } from 'react-icons/io';
-import { RiContactsLine, } from 'react-icons/ri';
-
-
-
-
-
-
+import { RiContactsLine } from 'react-icons/ri';
 
 export const links = [
   {
-  
     links: [
       {
         name: 'dashboard',
-        icon: <FiShoppingBag />,
-      },
-    ],
+        icon: <FiShoppingBag />
+      }
+    ]
   },
 
   {
@@ -26,65 +18,61 @@ export const links = [
     links: [
       {
         name: 'user',
-        icon: <AiOutlineShoppingCart />,
+        icon: <AiOutlineShoppingCart />
       },
       {
         name: 'partner',
-        icon: <IoMdContacts />,
+        icon: <IoMdContacts />
       },
       {
         name: 'campaign',
-        icon: <RiContactsLine />,
+        icon: <RiContactsLine />
       },
       {
         name: 'referral',
-        icon: <RiContactsLine />,
-      },
-    ],
+        icon: <RiContactsLine />
+      }
+    ]
   },
-  
+
   {
     title: 'Store Management',
     links: [
       {
         name: 'Products',
-        icon: <AiOutlineStock />,
+        icon: <AiOutlineStock />
       },
       {
         name: 'Stores',
-        icon: <AiOutlineAreaChart />,
-      },
-    ],
-  }, 
+        icon: <AiOutlineAreaChart />
+      }
+    ]
+  }
 ];
 
-
-export const Links2 = [ 
+export const Links2 = [
   {
-  Links2: [
+    Links2: [
+      {
+        name: 'Manage Team',
+        icon: <AiOutlineAreaChart />
+      }
+    ]
+  },
   {
-    name: 'Manage Team',
-    icon: <AiOutlineAreaChart />
+    Links2: [
+      {
+        name: 'Audit Log',
+        icon: <AiOutlineAreaChart />
+      }
+    ]
   },
-],
-  },
-{
-Links2:  [
   {
-    name: 'Audit Log',
-    icon: <AiOutlineAreaChart />
-  },
-],
-},
-{
-Links2:  [
-  {
-    name: 'Help',
-    icon: <AiOutlineAreaChart />
-  },
-],
-},
-]
-
-
-
+    Links2: [
+      {
+        name: 'Help',
+        icon: <AiOutlineAreaChart />
+      }
+    ]
+  }
+];
