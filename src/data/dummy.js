@@ -1,24 +1,22 @@
 import React from 'react';
-import {  AiOutlineShoppingCart, AiOutlineAreaChart,  AiOutlineStock } from 'react-icons/ai';
-import { FiShoppingBag} from 'react-icons/fi';
+import { FiShoppingBag } from 'react-icons/fi';
 import { IoMdContacts } from 'react-icons/io';
-import { RiContactsLine, } from 'react-icons/ri';
-
-
-
-
-
-
+import { RiBarChartBoxLine } from "react-icons/ri";
+import { CiHome } from "react-icons/ci"
+import { BsBookmarkCheck } from "react-icons/bs";
+import { CiStickyNote } from "react-icons/ci";
+import { FaUserPlus } from "react-icons/fa6";
+import { IoGridOutline } from "react-icons/io5";
+import { FaHeadphones } from "react-icons/fa";
 
 export const links = [
   {
-  
     links: [
       {
         name: 'dashboard',
-        icon: <FiShoppingBag />,
-      },
-    ],
+        icon: <CiHome />
+      }
+    ]
   },
 
   {
@@ -26,65 +24,71 @@ export const links = [
     links: [
       {
         name: 'user',
-        icon: <AiOutlineShoppingCart />,
+        icon: <FiShoppingBag/>
       },
       {
         name: 'partner',
-        icon: <IoMdContacts />,
+        icon: <IoMdContacts />
       },
       {
         name: 'campaign',
-        icon: <RiContactsLine />,
+        icon: <BsBookmarkCheck  />
       },
       {
         name: 'referral',
-        icon: <RiContactsLine />,
-      },
-    ],
+        icon: <CiStickyNote />
+      }
+    ]
   },
-  
+
   {
     title: 'Store Management',
     links: [
       {
         name: 'Products',
-        icon: <AiOutlineStock />,
+        icon: <RiBarChartBoxLine/>
       },
       {
         name: 'Stores',
-        icon: <AiOutlineAreaChart />,
-      },
-    ],
-  }, 
+        icon: <RiBarChartBoxLine />
+      }
+    ]
+  },
+  {
+    title: 'Point Management',
+    links: [
+      {
+        name: 'Rewaard',
+        icon: <RiBarChartBoxLine/>
+      }
+     
+    ]
+  },
 ];
 
-
-export const Links2 = [ 
+export const Links2 = [
   {
-  Links2: [
+    Links2: [
+      {
+        name: 'Manage Team',
+        icon: <FaUserPlus/>
+      }
+    ]
+  },
   {
-    name: 'Manage Team',
-    icon: <AiOutlineAreaChart />
+    Links2: [
+      {
+        name: 'Audit Log',
+        icon: <IoGridOutline/>
+      }
+    ]
   },
-],
-  },
-{
-Links2:  [
   {
-    name: 'Audit Log',
-    icon: <AiOutlineAreaChart />
-  },
-],
-},
-{
-Links2:  [
-  {
-    name: 'Help',
-    icon: <AiOutlineAreaChart />
-  },
-],
-},
-]
-
-
-
+    Links2: [
+      {
+        name: 'Help & First Step',
+        icon: <FaHeadphones/>
+      }
+    ]
+  }
+];
