@@ -1,4 +1,5 @@
 import Button from '../components/Button';
+import Table from '../components/Table';
 
 function Campaign() {
   return (
@@ -74,13 +75,7 @@ function Campaign() {
           </select>
         </form>
       </section>
-
-      <section>
-        <table>
-          <tr></tr>
-          <tbody></tbody>
-        </table>
-      </section>
+      <Table />
     </main>
   );
 }
