@@ -4,15 +4,15 @@
 @tailwind components;
 @tailwind utilities;
 
-/* body {
-
+body {
   font-family: 'Manrope', serif;
   font-optical-sizing: auto;
-  font-weight: 400;
   font-style: normal;
   overflow: auto;
   height: 100vh;
   display: flex;
+  margin: 0;
+  padding: 0;
 }
 
 ::-webkit-scrollbar {
@@ -30,10 +30,6 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: #555;
-} */
+} 
 
-body {
-  font-family: 'Manrope', serif;
-  margin: 0;
-  padding: 0;
-}
+

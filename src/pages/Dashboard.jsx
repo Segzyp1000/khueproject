@@ -6,7 +6,7 @@ const Dashboard = () => {
   return (
     <main>
       <div className="flex justify-between items-center flex-col">
-        <h1 className="text-[20px] font-semibold p-3 border-b shadow-sm w-full ">
+        <h1 className="text-[20px] font-semibold p-3  border-b border-gray-200 w-full ">
           Dashboard
         </h1>
       </div>

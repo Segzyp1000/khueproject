@@ -10,7 +10,7 @@ const Sidebar = () => {
 
   return (
     <div className="ml-3 h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto ">
-      <div className="w-[17rem] h-[5.5rem] shadow-lg border-b">
+      <div className="w-[14rem] h-[5.5rem] shadow-lg border-b">
         <Link to="/">
           <img
             src={Logo}
@@ -49,7 +49,7 @@ const Sidebar = () => {
       </div>
 
       <div className='flex w-[17rem] h-[5rem] mt-5 space-x-2'>
-        <img src={profile} alt='profile' className='w-[2rem] h-[2rem] mt-3'/>
+        <img src={profile} alt='profile' className='mt-3 w-[2rem] h-[2rem] object-contain top-2'/>
         <div>
         <p>Kelvin Gate</p>
         <p>kelvingate@mail.com</p>
