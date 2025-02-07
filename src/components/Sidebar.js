@@ -9,8 +9,8 @@ const Sidebar = () => {
     'flex items-center gap-5 pl-4  pb-2.5 rounded-lg text-md text-gray-700 dark:text-gray-200 hover:text-red hover:bg-light-gray m-2';
 
   return (
-    <div className="ml-3 h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto ">
-      <div className="w-[14rem] h-[5.5rem] shadow-lg border-b">
+    <div className="ml-3 h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto w-[12rem] ">
+      <div className="w-[12rem] h-[5.5rem] shadow-lg border-b">
         <Link to="/">
           <img
             src={Logo}

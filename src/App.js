@@ -11,6 +11,7 @@ import Campaign from './pages/Campaign';
 import Stores from './pages/Stores';
 import Products from './pages/Products';
 import Rewards from './pages/Rewards';
+import Partner from './pages/Partner';
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
           <Route index element={<Navigate replace to={'dashboard'} />} />
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="user" element={<User />} />
+          <Route path="partner" element={<Partner />} />
           <Route path="campaign" element={<Campaign />} />
           <Route path="referral" element={<Referral />} />
           <Route path="products" element={<Products />} />
