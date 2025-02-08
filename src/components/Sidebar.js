@@ -6,7 +6,7 @@ import profile from '../images/profile.jpg';
 
 const Sidebar = () => {
   const normalLink =
-    'flex items-center gap-5 pl-4  pb-2.5 rounded-lg text-md text-[#666D8D] m-2 ';
+    'flex items-center gap-5 pl-4  rounded-lg text-md text-[#666D8D]  active:bg-[#733AEA] hover:bg-[#733AEA] hover:text-blue-100 m-2 ';
 
   return (
     <div className="h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto w-[17rem]">
@@ -35,7 +35,7 @@ const Sidebar = () => {
         ))}
       </div>
 
-      <div className=" mt-20 h-[7.5rem] w-[15rem] shadow-xl">
+      <div className=" mt-40 h-[7.5rem] w-[15rem] bodede-b-3 border-gray-300">
         {Links2.map(item => (
           <div key={item.title}>
             {item.Links2.map(link => (
