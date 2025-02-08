@@ -5,8 +5,8 @@ import BarGraph from "../components/charts/BarGraph";
 const Dashboard = () => {
   return (
     <main>
-      <div className="flex justify-between items-center flex-col">
-        <h1 className="text-[20px] font-semibold p-3  border-b border-gray-200 w-full ">
+      <div className="w-[1140px]">
+        <h1 className="text-[20px] font-semibold p-3  border-gray-200  border-b border-b-primary-50  ">
           Dashboard
         </h1>
       </div>
