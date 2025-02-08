@@ -1,8 +1,8 @@
 import Button from '../components/Button';
-import CampaignData from '../components/CampaignData';
+import CampaignTable from '../components/CampaignTable';
 import { SlOptions } from 'react-icons/sl';
 
-import { data } from '../data/campaignData';
+import { data as campaignData } from '../data/campaignData';
 
 function Campaign() {
   return (
@@ -81,7 +81,7 @@ function Campaign() {
         </form>
       </section>
 
-      <CampaignData data={data} />
+      <CampaignTable campaignData={campaignData} />
     </main>
   );
 }
