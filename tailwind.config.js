@@ -5,7 +5,7 @@ module.exports = {
     fontFamily: {
       sans: ['Manrope'],
       serif: ['inter'],
-      
+      mono: ['Poppins']
     },
     extend: {
       colors: {

@@ -1,15 +1,15 @@
-import React from "react";
-import Button from "../components/Button";
-import { SlOptions } from "react-icons/sl";
+import React from 'react';
+import Button from '../components/Button';
+import { SlOptions } from 'react-icons/sl';
 
 const Partner = () => {
   const data = Array.from({ length: 11 }, (_, i) => ({
     id: i + 1,
     company: `Company ${i + 1}`,
-    category: ["Tech", "Finance", "Healthcare", "Retail"][i % 4],
+    category: ['Tech', 'Finance', 'Healthcare', 'Retail'][i % 4],
     domain: `company${i + 1}.com`,
-    location: ["New York", "London", "Berlin", "Tokyo"][i % 4],
-    status: i % 2 === 0 ? "Active" : "Pending",
+    location: ['New York', 'London', 'Berlin', 'Tokyo'][i % 4],
+    status: i % 2 === 0 ? 'Active' : 'Pending'
   }));
 
   return (
@@ -35,7 +35,7 @@ const Partner = () => {
               <span>icon</span>
               <span className="text-[1.4rem]">Export</span>
             </Button>
-            <Button type={"secondary"}>
+            <Button type={'secondary'}>
               <span className="text-[2rem]">&#43;</span>
               <span className="text-[1.4rem]">Add Partner</span>
             </Button>
@@ -56,7 +56,7 @@ const Partner = () => {
           </thead>
           <tbody>
             {data.map((item, index) => (
-              <tr className="bg-white ">
+              <tr className="bg-white">
                 <td className="py-5 px-4 text-left text-[#0D0D12] font-semibold border-b border-gray-300">
                   {item.company}
                 </td>
@@ -72,9 +72,9 @@ const Partner = () => {
                 <td className="py-5 px-4 text-left text-[#666d80]  font-semibold border-b border-gray-300">
                   <span
                     className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                      item.status === "Active"
-                        ? "text-blue-100 bg-[#4E5FEF]"
-                        : "bg-red-200 text-red-800"
+                      item.status === 'Active'
+                        ? 'text-blue-100 bg-[#4E5FEF]'
+                        : 'bg-red-200 text-red-800'
                     }`}
                   >
                     {item.status}

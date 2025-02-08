@@ -1,12 +1,17 @@
-import Button from "../components/Button";
-import Table from "../components/Table";
+import Button from '../components/Button';
+import CampaignData from '../components/CampaignData';
+import { SlOptions } from 'react-icons/sl';
+
+import { data } from '../data/campaignData';
 
 function Campaign() {
   return (
     <main className="px-[0.5rem]">
-      <header className="flex justify-between items-center text-[20px] font-semibold p-3 border-gray-200  border-b border-b-primary-50">
+      <header className="flex justify-between items-center text-[2rem] font-semibold p-3 border-gray-200  border-b border-b-primary-50">
         <h1 className="text-[20px] font-semibold">Campaign</h1>
-        <button className="border rounded-full">dots</button>
+        <button>
+          <SlOptions />
+        </button>
       </header>
 
       <section className="flex flex-col justify-between items-center gap-y-[1.4rem] py-[2rem]">
@@ -26,7 +31,7 @@ function Campaign() {
               <span>icon</span>
               <span className="text-[1.4rem]">Import/Export</span>
             </Button>
-            <Button type={"secondary"}>
+            <Button type={'secondary'}>
               <span className="text-[2rem]">&#43;</span>
               <span className="text-[1.4rem]">Create campaign</span>
             </Button>
@@ -75,7 +80,8 @@ function Campaign() {
           </select>
         </form>
       </section>
-      <Table />
+
+      <CampaignData data={data} />
     </main>
   );
 }
