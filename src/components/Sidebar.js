@@ -6,11 +6,11 @@ import profile from '../images/profile.jpg';
 
 const Sidebar = () => {
   const normalLink =
-    'flex items-center gap-5 pl-4  pb-2.5 rounded-lg text-md text-gray-700 dark:text-gray-200 hover:text-red hover:bg-light-gray m-2 ';
+    'flex items-center gap-5 pl-4  pb-2.5 rounded-lg text-md text-[#666D8D] m-2 ';
 
   return (
-    <div className="h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto">
-      <div className="w-[14rem] h-[5.5rem] shadow-lg border-b">
+    <div className="h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto w-[17rem]">
+      <div className="w-[17rem] h-[5.5rem] border-gray-200  border-b border-b-primary-50">
         <Link to="/">
           <img
             src={Logo}
@@ -21,10 +21,10 @@ const Sidebar = () => {
       </div>
 
       <div className=" h-[56.4rem] w-[17rem] shadow-sm border-b">
-        <p className="m-3 text-gray-400 dark:text-gray-400">Main Menu</p>
+        <p className="m-3 text-[#A4ABBB]">Main Menu</p>
         {links.map(item => (
           <div key={item.title}>
-            <p className="text-gray-400 dark:text-gray-400 m-3 mt-4 uppercase">{item.title}</p>
+            <p className="text-[#A4ABBB] m-3 mt-4 uppercase">{item.title}</p>
             {item.links.map(link => (
               <NavLink to={`/${link.name}`} key={link.name} className={() => normalLink}>
                 {link.icon}

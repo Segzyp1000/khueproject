@@ -1,11 +1,11 @@
-import Button from '../components/Button';
-import Table from '../components/Table';
+import Button from "../components/Button";
+import Table from "../components/Table";
 
 function Campaign() {
   return (
-    <main className="px-[3.2rem]">
-      <header className="flex justify-between items-center  py-[2rem] border-b border-b-primary-50">
-        <h1 className="text-[2rem] font-bold">Campaign</h1>
+    <main className="px-[0.5rem]">
+      <header className="flex justify-between items-center text-[20px] font-semibold p-3 border-gray-200  border-b border-b-primary-50">
+        <h1 className="text-[20px] font-semibold">Campaign</h1>
         <button className="border rounded-full">dots</button>
       </header>
 
@@ -26,14 +26,14 @@ function Campaign() {
               <span>icon</span>
               <span className="text-[1.4rem]">Import/Export</span>
             </Button>
-            <Button type={'secondary'}>
+            <Button type={"secondary"}>
               <span className="text-[2rem]">&#43;</span>
               <span className="text-[1.4rem]">Create campaign</span>
             </Button>
           </div>
         </div>
 
-        <div className="flex flex-col gap-[3.2rem] border rounded-[1.2rem] bg-[#ffcc91]  w-full  p-[1.5rem]">
+        <div className="flex flex-col gap-[3.2rem] border rounded-[1.2rem] bg-[#F8F3FF]  w-full  p-[1.5rem]">
           <span>🔒</span>
           <div className="grid grid-cols-5 gap-x-[3.2rem] font-serif">
             <div>
