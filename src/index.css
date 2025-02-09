@@ -12,7 +12,7 @@
   body {
     font-optical-sizing: auto;
     overflow: auto;
-    height: 100vh;
+    height: 100%;
     margin: 0;
     padding: 0;
     max-width: 1720px;
@@ -20,6 +20,7 @@
 
   ::-webkit-scrollbar {
     width: 5px;
+    height: 100%;
   }
 
   ::-webkit-scrollbar-track {
