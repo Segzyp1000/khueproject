@@ -3,10 +3,10 @@ import Sidebar from './Sidebar';
 
 const AppLayout = () => {
   return (
-    <div className="grid grid-cols-[272px_1fr] h-screen">
+    <main className="grid grid-cols-[18.2rem,1fr]">
       <Sidebar />
       <Outlet />
-    </div>
+    </main>
   );
 };
 
