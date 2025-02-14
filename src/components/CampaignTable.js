@@ -6,10 +6,10 @@ function CampaignTable({ campaignData }) {
   const [isChecked, setIsChecked] = useState(false);
 
   return (
-    <table className="w-full font-mono bg-white divide-y divide-gray-300 text-justify">
+    <table className="w-[1110px] h-[570px] font-mono bg-white divide-y divide-gray-300 text-justify">
       <thead className="text-gray-300 uppercase text-sm font-medium">
-        <tr className="">
-          <th className="">
+        <tr>
+          <th>
             <input
               type="checkbox"
               // value={campaignData}
@@ -38,7 +38,7 @@ function CampaignTable({ campaignData }) {
             key={data.id}
             className={`${isChecked ? 'bg-gray-100' : 'bg-white'} hover:bg-gray-100`}
           >
-            <td className="py-5 mx-auto">
+            <td className="py-5 px-3">
               <input
                 type="checkbox"
                 // value={data}

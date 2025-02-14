@@ -20,7 +20,7 @@ const Sidebar = () => {
         </Link>
       </div>
 
-      <div className=" h-[56.4rem] w-[17rem] shadow-sm border-b">
+      <div className=" h-[56.4rem] w-[17rem] border-gray-300 border-b relative left-0 bottom-0">
         <p className="m-3 text-[#A4ABBB]">Main Menu</p>
         {links.map(item => (
           <div key={item.title}>
@@ -35,7 +35,7 @@ const Sidebar = () => {
         ))}
       </div>
 
-      <div className=" mt-20 h-[7.5rem] w-[15rem] shadow-xl">
+      <div className=" h-[7.5rem] w-[15rem] border-b border-gray-300">
         {Links2.map(item => (
           <div key={item.title}>
             {item.Links2.map(link => (
