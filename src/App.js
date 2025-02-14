@@ -13,6 +13,7 @@ import Stores from './pages/Stores';
 import Products from './pages/Products';
 import Rewards from './pages/Rewards';
 
+
 export default function App() {
   return (
     <BrowserRouter>
