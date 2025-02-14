@@ -41,7 +41,7 @@ function CampaignTable({ campaignData }) {
             <td className="py-5 mx-auto">
               <input
                 type="checkbox"
-                // value={data}
+                value={data}
                 checked={isChecked}
                 onChange={e => setIsChecked(e.target.checked)}
                 className="w-4 h-4 focus:outline-none  accent-[#28005B] "
