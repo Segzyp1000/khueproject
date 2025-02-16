@@ -6,7 +6,7 @@ import { data as campaignData } from "../data/campaignData";
 
 function Campaign() {
   return (
-    <main className="px-[0.5rem] w-[1168px] h-screen">
+    <main className="px-[0.5rem] h-screen">
       <header className="flex justify-between items-center text-[2rem] font-semibold p-3 border-gray-200  border-b border-b-primary-50">
         <h1 className="text-[20px] font-semibold">Campaign</h1>
         <button>
@@ -14,7 +14,7 @@ function Campaign() {
         </button>
       </header>
 
-      <section className="flex flex-col justify-between items-center gap-y-[1.4rem] py-[2rem]">
+      <section className="flex flex-col justify-between items-center gap-y-[1.4rem] py-[2rem] px-5">
         <div className=" gap-[2rem] flex justify-between items-center w-full">
           <div className="flex gap-x-[0.8rem]">
             <Button>

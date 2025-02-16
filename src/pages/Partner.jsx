@@ -1,24 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "../components/Button";
 import { SlOptions } from "react-icons/sl";
+import { partnerData } from "../data/partnerData";
+import { Link } from "react-router-dom";
 
 const Partner = () => {
-  const data = Array.from({ length: 9 }, (_, i) => ({
-    id: i + 1,
-    company: `Company ${i + 1}`,
-    category: ["Tech", "Finance", "Healthcare", "Retail"][i % 4],
-    domain: `company${i + 1}.com`,
-    location: ["New York", "London", "Berlin", "Tokyo"][i % 4],
-    status: i % 2 === 0 ? "Active" : "Pending",
-  }));
+  const [showButton, setShowButton] = useState(false);
 
   return (
-    <div className="w-[1168px] h-screen">
+    <div>
       <header className="flex justify-between items-center text-[20px] font-semibold p-3 border-gray-200  border-b border-b-primary-50">
         <h1 className="text-[20px] font-semibold">Partner (20)</h1>
         <button className="border rounded-full">dots</button>
       </header>
-      <section className="flex flex-col justify-between items-center gap-y-[1.4rem] py-[2rem] px-5">
+      <section className="flex flex-col justify-between items-center gap-y-[1.4rem] py-[2rem]">
         <div className=" gap-[2rem] flex justify-between items-center w-full">
           <div className="flex gap-x-[0.8rem]">
             <Button>
@@ -42,7 +37,7 @@ const Partner = () => {
           </div>
         </div>
       </section>
-      <div className="overflow-x-auto p-6 w-[1104px] h-[744px]">
+      <div className="overflow-x-auto p-6">
         <table className="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
           <thead className="bg-[#EEEFF2] text-[#2B0058] uppercase text-sm">
             <tr>
@@ -55,7 +50,7 @@ const Partner = () => {
             </tr>
           </thead>
           <tbody>
-            {data.map((item, index) => (
+            {partnerData?.map((item, index) => (
               <tr className="bg-white">
                 <td className="py-5 px-4 text-left text-[#0D0D12] font-semibold border-b border-gray-300">
                   {item.company}
@@ -80,8 +75,29 @@ const Partner = () => {
                     {item.status}
                   </span>
                 </td>
-                <td className="py-3 px-4 text-left font-semibold border-b border-gray-300">
-                  <SlOptions className="text-gray-600 hover:text-gray-900 cursor-pointer" />
+
+                <td className="py-2 font-semibold border-b border-gray-300">
+                  <div>
+                    <SlOptions
+                      className="text-gray-600 hover:text-gray-900 cursor-pointer"
+                      onClick={() =>
+                        setShowButton((prevShowButton) => ({
+                          ...prevShowButton,
+                          [item.id]: !prevShowButton[item.id],
+                        }))
+                      }
+                    />
+                    {showButton[item.id] && (
+                      <Link
+                        to={`/partner-details/${item.id}`}
+                        className="text-blue-600 hover:text-blue-800"
+                      >
+                        <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                          View Details
+                        </button>
+                      </Link>
+                    )}
+                  </div>
                 </td>
               </tr>
             ))}

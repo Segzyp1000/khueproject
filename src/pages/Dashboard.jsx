@@ -5,7 +5,7 @@ import BarGraph from "../components/charts/BarGraph";
 const Dashboard = () => {
   return (
     <main>
-      <div className="w-[1140px]">
+      <div>
         <h1 className="text-[20px] font-semibold p-3  border-gray-200  border-b border-b-primary-50  ">
           Dashboard
         </h1>

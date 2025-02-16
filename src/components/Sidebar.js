@@ -9,8 +9,8 @@ const Sidebar = () => {
     'flex items-center gap-5 pl-4  pb-2.5 rounded-lg text-md text-[#666D8D] m-2 ';
 
   return (
-    <div className="h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto w-[17rem]">
-      <div className="w-[17rem] h-[5.5rem] border-gray-200  border-b border-b-primary-50">
+    <div className="h-[1012px]  md:hover:overflow-auto w-[15rem]">
+      <div className="w-[15rem] h-[5.5rem] border-gray-200  border-b border-b-primary-50">
         <Link to="/">
           <img
             src={Logo}
@@ -47,8 +47,8 @@ const Sidebar = () => {
           </div>
         ))}
       </div>
-
-      <div className="flex w-[17rem] h-[5rem] mt-5 space-x-2">
+        {/* profile  section */}
+      <div className="flex w-[17rem] h-[5rem] mt-20 space-x-2 relative bott-">
         <img src={profile} alt="profile" className="mt-3 w-[2rem] h-[2rem] object-contain top-2" />
         <div>
           <p>Kelvin Gate</p>
