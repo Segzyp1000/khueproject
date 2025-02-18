@@ -1,14 +1,11 @@
 import Button from "../components/Button";
 import PartnerTable from "../components/PartnerTable";
+import Layout from "../components/Layout";
 import { partnerData } from "../data/partnerData";
 
 function Partner() {
   return (
-    <div>
-      <header className="flex justify-between items-center text-[20px] font-semibold p-3 border-gray-200  border-b border-b-primary-50">
-        <h1 className="text-[20px] font-semibold">Partner (20)</h1>
-        <button className="border rounded-full">dots</button>
-      </header>
+    <Layout title="Partner (20)">
       <section className="flex flex-col justify-between items-center gap-y-[1.4rem] py-[2rem]">
         <div className=" gap-[2rem] flex justify-between items-center w-full">
           <div className="flex gap-x-[0.8rem]">
@@ -34,7 +31,7 @@ function Partner() {
         </div>
       </section>
       <PartnerTable partnerData={partnerData} />
-    </div>
+    </Layout>
   );
 }
 

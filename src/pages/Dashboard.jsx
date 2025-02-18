@@ -1,15 +1,11 @@
 import React from "react";
 import LineGraph from "../components/charts/LineGraph";
 import BarGraph from "../components/charts/BarGraph";
+import Layout from "../components/Layout";
 
 const Dashboard = () => {
   return (
-    <main>
-      <div>
-        <h1 className="text-[20px] font-semibold p-3  border-gray-200  border-b border-b-primary-50  ">
-          Dashboard
-        </h1>
-      </div>
+    <Layout title="Dashboard">
       <section className="grid grid-cols-4 mt-5">
         <div className="col-start-1 -col-end-1 flex justify-between">
           <div>
@@ -51,7 +47,7 @@ const Dashboard = () => {
           <LineGraph />
         </div>
       </section>
-    </main>
+    </Layout>
   );
 };
 
