@@ -14,9 +14,10 @@
     max-width: 1720px;
   }
 
-  /* Webkit Scrollbar Fix */
+  
   *::-webkit-scrollbar {
     width: 5px !important;
+    
     
   }
 

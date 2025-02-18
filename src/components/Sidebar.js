@@ -6,10 +6,10 @@ import profile from '../images/profile.jpg';
 
 const Sidebar = () => {
   const normalLink =
-    'flex items-center gap-5 pl-4  pb-2.5 rounded-lg text-md text-[#666D8D] m-2 ';
+    'flex items-center gap-5 pl-4  pb-2.5 rounded-lg text-md [text-[#0D0D12]  m-2 ';
 
   return (
-    <div className="h-[1012px]  md:hover:overflow-auto w-[15rem]">
+    <div className="h-[997px] md:overflow-hidden overflow-auto md:hover:overflow-auto w-[15rem]">
       <div className="w-[15rem] h-[5.5rem] border-gray-200  border-b border-b-primary-50">
         <Link to="/">
           <img

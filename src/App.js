@@ -13,7 +13,10 @@ import Rewards from './pages/Rewards';
 import PartnerDetails from './pages/PartnerDetails';
 
 
+
 export default function App() {
+  
+
   return (
     <BrowserRouter>
       <Routes>
@@ -27,7 +30,7 @@ export default function App() {
           <Route path="products" element={<Products />} />
           <Route path="stores" element={<Stores />} />
           <Route path="reward" element={<Rewards />} />
-          <Route path="partner-details" element={<PartnerDetails />} />
+          <Route path="details/:id" element={<PartnerDetails />} />
         </Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>
