@@ -103,7 +103,7 @@ const Dashboard = () => {
         <div className="col-span-2">
           <Line data={lineData} />
         </div>
-        <div className="col-span-2">
+        <div className="col-span-1">
           <Pie data={pieData} />
         </div>
 
