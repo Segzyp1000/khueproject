@@ -1,8 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-
 import AppLayout from './components/AppLayout';
-
 import User from './pages/User';
 import Partner from "./pages/Partner";
 import Referral from './pages/Referral';
@@ -12,9 +10,13 @@ import Campaign from './pages/Campaign';
 import Stores from './pages/Stores';
 import Products from './pages/Products';
 import Rewards from './pages/Rewards';
+import PartnerDetails from './pages/PartnerDetails';
+
 
 
 export default function App() {
+  
+
   return (
     <BrowserRouter>
       <Routes>
@@ -28,6 +30,7 @@ export default function App() {
           <Route path="products" element={<Products />} />
           <Route path="stores" element={<Stores />} />
           <Route path="reward" element={<Rewards />} />
+          <Route path="details/:id" element={<PartnerDetails />} />
         </Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>

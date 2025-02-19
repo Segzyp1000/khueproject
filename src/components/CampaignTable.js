@@ -6,8 +6,8 @@ function CampaignTable({ campaignData }) {
   const [isChecked, setIsChecked] = useState(false);
 
   return (
-    <table className="w-[1110px] h-[570px] font-mono bg-white divide-y divide-gray-300 text-justify">
-      <thead className="text-gray-300 uppercase text-sm font-medium">
+    <table className="w-[1110px] h-[570px]  bg-white divide-y divide-gray-300 text-justify">
+      <thead className="text-gray-400 uppercase text-md font-medium">
         <tr>
           <th>
             <input
