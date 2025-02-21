@@ -1,5 +1,5 @@
 import React from "react";
-import { Bar, Line, Pie, Doughnut } from "react-chartjs-2";
+import { Bar, Line, Pie, Doughnut, Scatter, Bubble } from "react-chartjs-2";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -13,7 +13,6 @@ import {
   Legend,
 } from "chart.js";
 import Layout from "../components/Layout";
-import Button from "../components/Button";
 
 ChartJS.register(
   CategoryScale,
@@ -22,6 +21,7 @@ ChartJS.register(
   PointElement,
   LineElement,
   ArcElement,
+
   Title,
   Tooltip,
   Legend
@@ -74,16 +74,34 @@ const Dashboard = () => {
     ],
   };
 
+  const scatterData = {
+    labels: ["Jan", "Feb", "Mar", "Apr", "May"],
+    datasets: [
+      {
+        label: "User Growth",
+        data: [100, 150, 200, 250, 300],
+        backgroundColor: "#36A2EB",
+      },
+    ],
+  };
+
+  const bubbleData = {
+    labels: ["Q1", "Q2", "Q3", "Q4"],
+    datasets: [
+      {
+        label: "Revenue Growth",
+        data: [100, 150, 200, 250],
+        backgroundColor: "#FF6384",
+      },
+    ],
+  };
+
   return (
     <Layout title="Dashboard">
-      <section className="grid grid-cols-4 gap-5 mt-5 h-[981px]">
+      <section className="grid md:grid-cols-4 grid-cols-2 gap-10 mt-5 h-screen">
         {/* KPI Metrics */}
         <div className="col-span-4 flex justify-between">
           <h2 className="text-lg font-semibold">👋 Hey, Kevin.</h2>
-          <Button>
-            <span>icon</span>
-            <span className="text-[1.4rem]">Filter</span>
-          </Button>
         </div>
 
         <div className="col-span-1">
@@ -96,26 +114,20 @@ const Dashboard = () => {
           <Line data={lineData} />
         </div>
         <div className="col-span-1">
-          <Doughnut data={doughnutData} />
+          <Scatter data={scatterData} />
         </div>
 
         {/* User Overview & Most Active Pages */}
-        <div className="col-span-2">
-          <Line data={lineData} />
-        </div>
         <div className="col-span-1">
           <Pie data={pieData} />
+        </div>
+        <div className="col-span-1">
+          <Bubble data={bubbleData} />
         </div>
 
         {/* Visitor Insights */}
         <div className="col-span-1">
           <Doughnut data={doughnutData} />
-        </div>
-        <div className="col-span-1">
-          <Pie data={pieData} />
-        </div>
-        <div className="col-span-2">
-          <Bar data={barData} />
         </div>
       </section>
     </Layout>

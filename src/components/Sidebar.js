@@ -1,61 +1,97 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { links, Links2 } from '../data/dummy';
 import Logo from '../images/logo.png';
 import profile from '../images/profile.jpg';
+import { FiMenu, FiX } from 'react-icons/fi';
 
 const Sidebar = () => {
-  const normalLink =
-    'flex items-center gap-5 pl-4  pb-2.5 rounded-lg text-md [text-[#0D0D12]  m-2 ';
+  const [isOpen, setIsOpen] = useState(true);
+  const [isMobileOpen, setIsMobileOpen] = useState(false);
+
+  const toggleSidebar = () => setIsOpen(!isOpen);
+  const toggleMobileSidebar = () => setIsMobileOpen(!isMobileOpen);
+
+  const normalLink = 'flex items-center gap-5 pl-4 pb-2.5 rounded-lg text-md text-[#0D0D12] m-2';
+  const iconOnlyLink = 'flex justify-center items-center p-3 rounded-lg text-md text-[#0D0D12] m-2';
 
   return (
-    <div className="h-[997px] md:overflow-hidden overflow-auto md:hover:overflow-auto w-[15rem]">
-      <div className="w-[15rem] h-[5.5rem] border-gray-200  border-b border-b-primary-50">
-        <Link to="/">
-          <img
-            src={Logo}
-            alt="logo"
-            className="w-[13rem] h-[2.5rem] object-contain top-5 relative"
-          />
-        </Link>
-      </div>
+    <>
+      {/* Mobile Toggle Button */}
+      <button
+        className="md:hidden fixed top-4 left-4 z-50 bg-gray-800 text-white p-2 rounded"
+        onClick={toggleMobileSidebar}
+      >
+        {isMobileOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+      </button>
 
-      <div className=" h-[56.4rem] w-[17rem] border-gray-300 border-b relative left-0 bottom-0">
-        <p className="m-3 text-[#A4ABBB]">Main Menu</p>
-        {links.map(item => (
-          <div key={item.title}>
-            <p className="text-[#A4ABBB] m-3 mt-4 uppercase">{item.title}</p>
-            {item.links.map(link => (
-              <NavLink to={`/${link.name}`} key={link.name} className={() => normalLink}>
-                {link.icon}
-                <span className="capitalize ">{link.name}</span>
-              </NavLink>
-            ))}
-          </div>
-        ))}
-      </div>
+      {/* Sidebar */}
+      <div
+        className={`h-screen md:relative absolute top-0 left-0 bg-white border-r border-gray-200 transition-all duration-300 
+          ${isOpen ? 'w-[15rem]' : 'w-[4rem]'}
+          ${isMobileOpen ? 'w-[15rem] z-50 ' : 'md:block hidden'}`}
+      >
+        <div className="flex justify-between items-center p-4 border-b border-gray-200">
+          <Link to="/">
+            <img
+              src={Logo}
+              alt="logo"
+              className={`object-contain transition-all duration-300 ${isOpen ? 'w-[13rem]' : 'w-0 hidden'}`}
+            />
+          </Link>
+          <button className="hidden md:block" onClick={toggleSidebar}>
+            {isOpen ? <FiX size={20} /> : <FiMenu size={20} />}
+          </button>
+        </div>
 
-      <div className=" h-[7.5rem] w-[15rem] border-b border-gray-300">
-        {Links2.map(item => (
-          <div key={item.title}>
-            {item.Links2.map(link => (
-              <NavLink to={`/${link.name}`} key={link.name} className={() => normalLink}>
-                {link.icon}
-                <span>{link.name}</span>
-              </NavLink>
-            ))}
-          </div>
-        ))}
-      </div>
-        {/* profile  section */}
-      <div className="flex w-[17rem] h-[5rem] mt-20 space-x-2 relative bott-">
-        <img src={profile} alt="profile" className="mt-3 w-[2rem] h-[2rem] object-contain top-2" />
-        <div>
-          <p>Kelvin Gate</p>
-          <p>kelvingate@mail.com</p>
+        <div className="h-[calc(100vh-5.5rem)] overflow-auto">
+          <p className={`m-3 text-[#A4ABBB] ${!isOpen && 'hidden'}`}>Main Menu</p>
+          {links.map(item => (
+            <div key={item.title}>
+              <p className={`text-[#A4ABBB] m-3 mt-4 uppercase ${!isOpen && 'hidden'}`}>{item.title}</p>
+              {item.links.map(link => (
+                <NavLink
+                  to={`/${link.name}`}
+                  key={link.name}
+                  className={isOpen ? normalLink : iconOnlyLink}
+                >
+                  {link.icon}
+                  {isOpen && <span className="capitalize">{link.name}</span>}
+                </NavLink>
+              ))}
+            </div>
+          ))}
+        </div>
+
+        <div className="h-[7.5rem] border-t border-gray-300 mt-20">
+          {Links2.map(item => (
+            <div key={item.title}>
+              {item.Links2.map(link => (
+                <NavLink
+                  to={`/${link.name}`}
+                  key={link.name}
+                  className={isOpen ? normalLink : iconOnlyLink}
+                >
+                  {link.icon}
+                  {isOpen && <span>{link.name}</span>}
+                </NavLink>
+              ))}
+            </div>
+          ))}
+        </div>
+
+        {/* Profile Section */}
+        <div className={`flex items-center mt-20 space-x-2 p-4 ${!isOpen && 'justify-center'}`}>
+          <img src={profile} alt="profile" className="w-[2rem] h-[2rem] object-cover rounded-full" />
+          {isOpen && (
+            <div>
+              <p>Kelvin Gate</p>
+              <p className="text-sm text-gray-500">kelvingate@mail.com</p>
+            </div>
+          )}
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
