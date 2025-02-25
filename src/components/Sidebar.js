@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { links } from '../data/dummy';
 import Logo from '../images/logo.png';
-
-import { FiMenu, FiX } from 'react-icons/fi';
+import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
+import { FiMenu} from 'react-icons/fi';
 
 
 const Sidebar = () => {
@@ -26,7 +26,7 @@ const Sidebar = () => {
         className="md:hidden fixed top-4 left-4 z-50 bg-gray-800  text-white p-2 rounded"
         onClick={toggleMobileSidebar}
       >
-        {isMobileOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+        {isMobileOpen ? <MdOutlineKeyboardDoubleArrowRight size={24} /> : <FiMenu size={24} />}
       </button>
 
       {/* Sidebar */}
@@ -44,7 +44,7 @@ const Sidebar = () => {
             />
           </Link>
           <button className="hidden md:block" onClick={toggleSidebar}>
-            {isOpen ? <FiX size={20} /> : <FiMenu size={20} />}
+            {isOpen ? <MdOutlineKeyboardDoubleArrowRight size={20} /> : <FiMenu size={20} />}
           </button>
         </div>
 
