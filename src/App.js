@@ -14,26 +14,27 @@ import PartnerDetails from './pages/PartnerDetails';
 
 
 
-export default function App() {
-  
 
+
+export default function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route element={<AppLayout />}>
-          <Route index element={<Navigate replace to={'dashboard'} />} />
-          <Route path="dashboard" element={<Dashboard />} />
-          <Route path="user" element={<User />} />
-          <Route path="partner" element={<Partner />} />
-          <Route path="campaign" element={<Campaign />} />
-          <Route path="referral" element={<Referral />} />
-          <Route path="products" element={<Products />} />
-          <Route path="stores" element={<Stores />} />
-          <Route path="reward" element={<Rewards />} />
-          <Route path="details/:id" element={<PartnerDetails />} />
-        </Route>
-        <Route path="*" element={<PageNotFound />} />
-      </Routes>
-    </BrowserRouter>
+    
+      <BrowserRouter className="dark:bg-gray-600">
+        <Routes>
+          <Route element={<AppLayout />}>
+            <Route index element={<Navigate replace to={'dashboard'} />} />
+            <Route path="dashboard" element={<Dashboard />} />
+            <Route path="user" element={<User />} />
+            <Route path="partner" element={<Partner />} />
+            <Route path="campaign" element={<Campaign />} />
+            <Route path="referral" element={<Referral />} />
+            <Route path="products" element={<Products />} />
+            <Route path="stores" element={<Stores />} />
+            <Route path="reward" element={<Rewards />} />
+            <Route path="details/:id" element={<PartnerDetails />} />
+          </Route>
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
+      </BrowserRouter>
   );
 }

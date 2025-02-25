@@ -92,16 +92,17 @@ const Dashboard = () => {
         label: "Revenue Growth",
         data: [100, 150, 200, 250],
         backgroundColor: "#FF6384",
+        dark: "text-white",
       },
     ],
   };
 
   return (
     <Layout title="Dashboard">
-      <section className="grid md:grid-cols-4 grid-cols-2 gap-10 mt-5 h-screen">
+      <section className=" dark:bg-gray-800 grid md:grid-cols-4 grid-cols-2 gap-10 h-screen ">
         {/* KPI Metrics */}
         <div className="col-span-4 flex justify-between">
-          <h2 className="text-lg font-semibold">👋 Hey, Kevin.</h2>
+          <h2 className="text-lg font-semibold mt-5">👋 Hey, Kevin.</h2>
         </div>
 
         <div className="col-span-1">
