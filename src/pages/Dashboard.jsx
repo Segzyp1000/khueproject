@@ -99,11 +99,10 @@ const Dashboard = () => {
 
   return (
     <Layout title="Dashboard">
-      <section className=" dark:bg-gray-800 grid md:grid-cols-4 grid-cols-2 gap-10 h-screen ">
+      <h2 className="text-lg font-semibold mt-5">👋 Hey, Kevin.</h2>
+
+      <section className=" dark:bg-gray-800 grid md:grid-cols-4 grid-cols-1 gap-4 h-screen mt-5">
         {/* KPI Metrics */}
-        <div className="col-span-4 flex justify-between">
-          <h2 className="text-lg font-semibold mt-5">👋 Hey, Kevin.</h2>
-        </div>
 
         <div className="col-span-1">
           <Bar data={barData} />
