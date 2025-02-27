@@ -100,7 +100,7 @@ const Dashboard = () => {
   return (
     <Layout title="Dashboard">
       <h2 className="text-lg font-semibold mt-5">👋 Hey, Kevin.</h2>
-      <section className=" dark:bg-gray-800 grid md:grid-cols-4 grid-cols-1 gap-4  mt-5">
+      <section className=" dark:bg-gray-800 grid md:grid-cols-4 grid-cols-1 gap-10  mt-5">
         {/* KPI Metrics */}
 
         <div className="col-span-1">

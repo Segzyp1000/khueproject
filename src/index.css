@@ -43,3 +43,8 @@
     container: center !important;
   }
 }
+
+
+  .sidebar {
+    max-height: 100%;
+  }
