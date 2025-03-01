@@ -48,13 +48,13 @@ function CampaignTable({ campaignData }) {
           <th className="py-3">created at</th>
           <th className="py-3">start</th>
           <th className="py-3">end</th>
-          <th className="py-3">campaign usage</th>
+          <th className="py- hidden md:block">campaign usage</th>
           <th className="py-3"></th>
         </tr>
       </thead>
 
       {/* Body */}
-      <tbody className="divide-y divide-gray-300 dark:divide-gray-800">
+      <tbody className="divide-y divide-gray-300 dark:divide-gray-700">
         {campaignData.map((data) => (
           <tr
             key={data.id}
@@ -80,7 +80,7 @@ function CampaignTable({ campaignData }) {
             <td className="py-5 text-[#666d80] dark:text-gray-400 font-normal">{data.createdAt}</td>
             <td className="py-5 text-[#666d80] dark:text-gray-400 font-normal">{data.start}</td>
             <td className="py-5 text-[#666d80] dark:text-gray-400 font-normal">{data.end}</td>
-            <td className="py-5 text-[#666d80] dark:text-gray-400 font-normal">{data.campaignUsage}</td>
+            <td className="py-5 text-[#666d80] dark:text-gray-400 font-normal md:block hidden">{data.campaignUsage}</td>
 
             {/* Options Button */}
             <td className="py-5">
