@@ -54,7 +54,7 @@ function CampaignTable({ campaignData }) {
       </thead>
 
       {/* Body */}
-      <tbody className="divide-y divide-gray-300 dark:divide-gray-700">
+      <tbody className="divide-y divide-gray-300 dark:divide-gray-800">
         {campaignData.map((data) => (
           <tr
             key={data.id}

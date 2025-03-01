@@ -19,12 +19,12 @@ const Sidebar = () => {
 
   return (
     <div
-      className={`sidebar h-full fixed md:relative top-0 left-0 dark:bg-gray-800 border-r border-gray-200 dark:border-gray-500 transition-all  duration-300   ${
+      className={`fixed h-screen md:relative top-0 left-0 dark:bg-gray-800 border-r border-gray-200 dark:border-gray-500 transition-all duration-300 ${
         isOpen ? "w-[15rem]" : "w-[4rem]"
-      }`}
+      } z-50`} // Added z-index to ensure sidebar stays on top
     >
       {/* Top Section */}
-      <div className="items-center p-4 border-b border-gray-200 dark:border-gray-500">
+      <div className=" dark:bg-slate-800 bg-white flex items-center shadow-3xl border-r border-black p-4 border-b md:border-gray-200 dark:border-gray-500">
         <Link to="/">
           <img
             src={Logo}
@@ -40,7 +40,7 @@ const Sidebar = () => {
       </div>
 
       {/* Menu Section */}
-      <div className="overflow-auto">
+      <div className="dark:bg-slate-800 bg-white  overflow-auto shadow-6xl bborder-r border-black">
         <p className={`m-3 text-[#A4ABBB] ${isOpen ? "block" : "hidden"}`}>
           Main Menu
         </p>
@@ -66,8 +66,6 @@ const Sidebar = () => {
           </div>
         ))}
       </div>
-
-     
     </div>
   );
 };
