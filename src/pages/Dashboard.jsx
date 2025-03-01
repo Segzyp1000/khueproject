@@ -110,8 +110,10 @@ const Dashboard = () => {
           <Line data={lineData} />
         </div>
         <div className="md:col-span-1 col-span-3">
-          <Line data={lineData} />
+          <Bubble data={bubbleData} />
         </div>
+
+       
         <div className="md:col-span-1 col-span-3">
           <Scatter data={scatterData} />
         </div>
@@ -128,9 +130,7 @@ const Dashboard = () => {
         <div className="md:col-span-1 col-span-3">
           <Doughnut data={doughnutData} />
         </div>
-        <div className="md:col-span-1 col-span-3">
-          <Bubble data={bubbleData} />
-        </div>
+       
       </section>
     </Layout>
   );
