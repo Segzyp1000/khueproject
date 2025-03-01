@@ -11,7 +11,7 @@ function Partner() {
   return (
     <Layout title="Partner (20)">
       <section className="flex flex-col justify-between md:justify-normal items-center gap-y-[1.4rem] py-[2rem]">
-        <div className=" gap-[2rem] flex md:justify-between items-center w-full">
+        <div className=" gap-[1rem] flex md:justify-between items-center w-full">
           <div className="flex gap-x-[0.8rem]">
             <Button>
               <span>icon</span>
