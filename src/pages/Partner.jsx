@@ -10,21 +10,21 @@ function Partner() {
 
   return (
     <Layout title="Partner (20)">
-      <section className="flex flex-col justify-between md:justify-normal items-center gap-y-[1.4rem] py-[2rem]">
-        <div className=" gap-[1rem] flex md:justify-between items-center w-full">
-          <div className="flex gap-x-[0.8rem]">
+      <section className="flex flex-col justify-between md:justify-normal items-center gap-y-[1.4rem] py-[2rem] min-h-full">
+        <div className=" gap-[1rem] flex md:justify-between items-center min-w-full">
+          <div className="flex md:gap-x-[0.8rem] gap-x-[0.2rem]">
             <Button>
-              <span>icon</span>
+              <span>🔻</span>
               <span className="text-[1.4rem]">Sort by</span>
             </Button>
             <Button>
-              <span>icon</span>
+              <span>🔍</span>
               <span className="text-[1.4rem]">Filter</span>
             </Button>
           </div>
-          <div className="flex gap-x-[0.8rem] ">
+          <div className="flex md:gap-x-[0.8rem] gap-x-[0.2rem] ">
             <Button>
-              <span>icon</span>
+              <span>🔄</span>
               <span className="text-[1.4rem]">Export</span>
             </Button>
             <Button type={"secondary"}>
@@ -39,12 +39,12 @@ function Partner() {
         <table className="min-w-full bg-white dark:bg-gray-800 shadow-md rounded-lg overflow-hidden">
           <thead className="bg-[#EEEFF2] dark:bg-gray-700 text-[#2B0058] uppercase dark:text-white text-sm">
             <tr>
-              <th className="py-3 px-6 text-left">Company</th>
-              <th className="py-3 px-6 text-left">Category</th>
-              <th className="py-3 px-6 text-left hidden md:block">Domain</th>
-              <th className="py-3 px-6 text-left">Location</th>
-              <th className="py-3 px-6 text-left">Status</th>
-              <th className="py-3 px-6 text-left"></th>
+              <th className="py-3 px-5 text-left">Company</th>
+              <th className="py-3 px-5 text-left">Category</th>
+              <th className="py-3 px-5 text-left hidden md:block">Domain</th>
+              <th className="py-3 px-5 text-left">Location</th>
+              <th className="py-3 px-5 text-left">Status</th>
+              <th className="py-3 px-5 text-left"></th>
             </tr>
           </thead>
           <tbody>

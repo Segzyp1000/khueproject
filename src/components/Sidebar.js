@@ -20,7 +20,7 @@ const Sidebar = () => {
 
   return (
     <div
-      className={`fixed h-full md:h-screen md:relative top-0 left-0 dark:bg-gray-800 border-r border-gray-200 dark:border-gray-500 transition-all duration-300 ${
+      className={`fixed min-h-full md:relative top-0 left-0 dark:bg-gray-800 border-r border-gray-200 dark:border-gray-500 transition-all duration-300 ${
         isOpen ? "w-[15rem]" : "w-[4rem]"
       } z-50`} // Added z-index to ensure sidebar stays on top
     >

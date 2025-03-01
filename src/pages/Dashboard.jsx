@@ -92,7 +92,7 @@ const Dashboard = () => {
         label: "Revenue Growth",
         data: [100, 150, 200, 250],
         backgroundColor: "#FF6384",
-        dark: "text-white",
+        
       },
     ],
   };
@@ -100,34 +100,34 @@ const Dashboard = () => {
   return (
     <Layout title="Dashboard">
       <h2 className="text-lg font-semibold mt-5">👋 Hey, Kevin.</h2>
-      <section className=" dark:bg-gray-800 grid md:grid-cols-4 grid-cols-1 gap-10 space-y-7 mt-10 mb-5">
+      <section className=" dark:bg-gray-800  grid md:grid-cols-4 grid-cols-1 gap-10 space-y-7 mt-10 mb-5">
         {/* KPI Metrics */}
 
-        <div className="md:col-span-1 col-span-3">
+        <div className="md:col-span-1 col-span-3 ">
           <Bar data={barData} />
         </div>
-        <div className="md:col-span-1 col-span-3">
+        <div className="md:col-span-1 col-span-3 ">
           <Line data={lineData} />
         </div>
-        <div className="md:col-span-1 col-span-3">
+        <div className="md:col-span-1 col-span-3 ">
           <Bubble data={bubbleData} />
         </div>
 
        
-        <div className="md:col-span-1 col-span-3">
+        <div className="md:col-span-1 col-span-3 ">
           <Scatter data={scatterData} />
         </div>
 
         {/* User Overview & Most Active Pages */}
-        <div className="md:col-span-1 col-span-3">
+        <div className="md:col-span-1 col-span-3 ">
           <Pie data={pieData} />
         </div>
-        <div className="md:col-span-2 col-span-3">
+        <div className="md:col-span-2 col-span-3 ">
           <Bubble data={bubbleData} />
         </div>
 
         {/* Visitor Insights */}
-        <div className="md:col-span-1 col-span-3">
+        <div className="md:col-span-1 col-span-3 ">
           <Doughnut data={doughnutData} />
         </div>
        
