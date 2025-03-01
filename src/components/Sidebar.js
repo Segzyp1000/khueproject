@@ -40,7 +40,7 @@ const Sidebar = () => {
       </div>
 
       {/* Menu Section */}
-      <div className="dark:bg-slate-800 bg-white  overflow-auto shadow-6xl bborder-r border-black">
+      <div className="dark:bg-slate-800 bg-white h-full  overflow-auto shadow-6xl bborder-r border-black">
         <p className={`m-3 text-[#A4ABBB] ${isOpen ? "block" : "hidden"}`}>
           Main Menu
         </p>
