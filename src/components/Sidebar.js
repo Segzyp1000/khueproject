@@ -6,7 +6,8 @@ import { MdClose } from "react-icons/md";
 import { FiMenu } from "react-icons/fi";
 
 const Sidebar = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
+  
 
   // Toggle between expanded (icons + text) and collapsed (icons only)
   const toggleSidebar = () => setIsOpen(!isOpen);
