@@ -26,7 +26,7 @@ function CampaignTable({ campaignData }) {
   const isAllChecked = campaignData.every((item) => checkedItems[item.id]);
 
   return (
-    <table className="w-full h-auto bg-white dark:bg-gray-800 divide-y divide-gray-300 dark:divide-gray-700 text-justify transition-colors duration-300">
+    <table className="w-full h-screen bg-white dark:bg-gray-800 divide-y divide-gray-300 dark:divide-gray-700 text-justify transition-colors duration-300">
       {/* Header */}
       <thead className="text-gray-400 dark:text-gray-500 uppercase text-md font-medium">
         <tr>

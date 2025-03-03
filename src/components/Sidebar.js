@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { links } from "../data/dummy";
 import Logo from "../images/logo.png";
-import { MdClose } from "react-icons/md";
 import { FiMenu } from "react-icons/fi";
+import { MdKeyboardDoubleArrowRight } from "react-icons/md";
+
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,7 +37,7 @@ const Sidebar = () => {
           />
         </Link>
         <button onClick={toggleSidebar} className="text-gray-899 dark:text-gray-200 p-2 rounded md:block">
-          {isOpen ? <MdClose size={20} /> : <FiMenu size={20} />}
+          {isOpen ? <MdKeyboardDoubleArrowRight  size={20} /> : <FiMenu size={20} />}
         </button>
       </div>
 
