@@ -15,11 +15,11 @@ function Partner() {
           <div className="flex md:gap-x-[0.8rem] gap-x-[0.2rem]">
             <Button>
               <span>🔻</span>
-              <span className="text-[1.4rem]">Sort by</span>
+              <span className="text-[1.4rem] hidden md:block">Sort by</span>
             </Button>
             <Button>
               <span>🔍</span>
-              <span className="text-[1.4rem]">Filter</span>
+              <span className="text-[1.4rem] hidden md:block">Filter</span>
             </Button>
           </div>
           <div className="flex md:gap-x-[0.8rem] gap-x-[0.2rem] ">

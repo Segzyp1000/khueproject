@@ -45,13 +45,15 @@ function Campaign() {
             </Button>
             <Button>
               <span>🔍</span>
-              <span className="text-[1.4rem]">Filter</span>
+              <span className="text-[1.4rem] hidden md:block">Filter</span>
             </Button>
           </div>
           <div className="flex gap-x-[0.8rem]">
             <Button>
               <span>🔄</span>
-              <span className="text-[1.4rem]">Import/Export</span>
+              <span className="text-[1.4rem] hidden md:block">
+                Import/Export
+              </span>
             </Button>
             <Button type="secondary">
               <span className="text-[2rem]">&#43;</span>
