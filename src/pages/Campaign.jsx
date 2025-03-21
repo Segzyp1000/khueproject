@@ -38,22 +38,20 @@ function Campaign() {
       <section className="flex flex-col justify-between items-center gap-y-[1.4rem] py-[2rem] px-5">
         {/* Action Buttons */}
         <div className="gap-[2rem] flex justify-between items-center w-full">
-          <div className="flex gap-x-[0.8rem]">
+          <div className="hidden md:flex gap-x-[0.8rem]">
             <Button>
               <span>🔻</span>
               <span className="text-[1.4rem]">Sort by</span>
             </Button>
-            <Button>
+            <Button className="hidden md:block">
               <span>🔍</span>
-              <span className="text-[1.4rem] hidden md:block">Filter</span>
+              <span className="text-[1.4rem] ">Filter</span>
             </Button>
           </div>
-          <div className="flex gap-x-[0.8rem]">
+          <div className="flex md:gap-x-[0.8rem] gap-x-[10rem] ">
             <Button>
               <span>🔄</span>
-              <span className="text-[1.4rem] hidden md:block">
-                Import/Export
-              </span>
+              <span className="text-[1.4rem]">Import/Export</span>
             </Button>
             <Button type="secondary">
               <span className="text-[2rem]">&#43;</span>

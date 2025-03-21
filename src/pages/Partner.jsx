@@ -12,17 +12,17 @@ function Partner() {
     <Layout title="Partner (20)">
       <section className="flex flex-col justify-between md:justify-normal items-center gap-y-[1.4rem] py-[2rem] min-h-full">
         <div className=" gap-[1rem] flex md:justify-between items-center min-w-full">
-          <div className="flex md:gap-x-[0.8rem] gap-x-[0.2rem]">
+          <div className=" hidden md:flex md:gap-x-[0.8rem] gap-x-[0.2rem]">
             <Button>
               <span>🔻</span>
-              <span className="text-[1.4rem] hidden md:block">Sort by</span>
+              <span className="text-[1.4rem]">Sort by</span>
             </Button>
             <Button>
               <span>🔍</span>
-              <span className="text-[1.4rem] hidden md:block">Filter</span>
+              <span className="text-[1.4rem]">Filter</span>
             </Button>
           </div>
-          <div className="flex md:gap-x-[0.8rem] gap-x-[0.2rem] ">
+          <div className="flex md:gap-x-[0.8rem] gap-x-[10rem] ">
             <Button>
               <span>🔄</span>
               <span className="text-[1.4rem]">Export</span>
