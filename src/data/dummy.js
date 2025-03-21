@@ -4,7 +4,7 @@ import { IoMdContacts } from 'react-icons/io';
 import { RiBarChartBoxLine } from "react-icons/ri";
 import { CiHome } from "react-icons/ci"
 import { BsBookmarkCheck } from "react-icons/bs";
-import { CiStickyNote } from "react-icons/ci";
+import { CiStickyNote } from "react-icons/ci"; 
 import { FaUserPlus } from "react-icons/fa6";
 import { IoGridOutline } from "react-icons/io5";
 import { FaHeadphones } from "react-icons/fa";

@@ -35,34 +35,34 @@ function Partner() {
         </div>
       </section>
 
-      <div className="overflow-x-auto p-6">
+      <div className="overflow-x-auto p-6 ">
         <table className="min-w-full bg-white dark:bg-gray-800 shadow-md rounded-lg overflow-hidden">
           <thead className="bg-[#EEEFF2] dark:bg-gray-700 text-[#2B0058] uppercase dark:text-white text-sm">
             <tr>
-              <th className="py-3 px-5 text-left">Company</th>
-              <th className="py-3 px-5 text-left">Category</th>
-              <th className="py-3 px-5 text-left hidden md:block">Domain</th>
-              <th className="py-3 px-5 text-left">Location</th>
-              <th className="py-3 px-5 text-left">Status</th>
-              <th className="py-3 px-5 text-left"></th>
+              <th className="py-3 px-3 text-left">Company</th>
+              <th className="py-3 px-3 text-left">Category</th>
+              <th className="py-3 px-3 text-left hidden md:block">Domain</th>
+              <th className="py-3 px-3 text-left">Location</th>
+              <th className="py-3 px-3 text-left">Status</th>
+              <th className="py-3 px-3 text-left"></th>
             </tr>
           </thead>
           <tbody>
             {partnerData.map((item) => (
               <tr className="bg-white dark:bg-gray-800">
-                <td className="py-5 px-4 text-left text-[#0D0D12] dark:text-gray-200 font-semibold border-b border-gray-300">
+                <td className="py-5 px-2 text-left text-[#0D0D12] dark:text-gray-200 font-semibold border-b border-gray-300">
                   {item.company}
                 </td>
-                <td className="py-5 px-4 text-left text-[#666d80] dark:text-gray-400 font-semibold border-b border-gray-300">
+                <td className="py-5 px-2 text-left text-[#666d80] dark:text-gray-400 font-semibold border-b border-gray-300">
                   {item.category}
                 </td>
-                <td className="py-5 px-4 text-left text-[#666d80] dark:text-gray-400 font-semibold border-b border-gray-300 hidden md:block">
+                <td className="py-5 px-2 text-left text-[#666d80] dark:text-gray-400 font-semibold border-b border-gray-300 hidden md:block">
                   {item.domain}
                 </td>
-                <td className="py-5 px-4 text-left text-[#666d80] dark:text-gray-400 font-semibold border-b border-gray-300">
+                <td className="py-5 px-2 text-left text-[#666d80] dark:text-gray-400 font-semibold border-b border-gray-300">
                   {item.location}
                 </td>
-                <td className="py-5 px-4 text-left text-[#666d80] dark:text-gray-400 font-semibold border-b border-gray-300 ">
+                <td className="py-5 px-2 text-left text-[#666d80] dark:text-gray-400 font-semibold border-b border-gray-300 ">
                   <span
                     className={`px-3 py-1 rounded-full text-xs font-semibold ${
                       item.status === "Active"
@@ -77,7 +77,7 @@ function Partner() {
                 <td className="py-2 font-semibold border-b border-gray-300 dark:text-gray-400">
                   <div>
                     <SlOptions
-                      className="text-gray-600 dark:text-gray-400 hover:text-gray-900 cursor-pointer"
+                      className="md:block hidden text-gray-600 dark:text-gray-400 hover:text-gray-900 cursor-pointer"
                       onClick={() =>
                         setShowButton((prevShowButton) => ({
                           ...prevShowButton,
@@ -90,7 +90,7 @@ function Partner() {
                         to={`/details/${item.id}`}
                         className="text-blue-600 dark:text-blue-400 hover:text-blue-800"
                       >
-                        <button className="bg-transparent dark:hover:bg-blue hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                        <button className="bg-transparent dark:hover:bg-blue hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-2 border border-blue-500 hover:border-transparent rounded">
                           View Details
                         </button>
                       </Link>
