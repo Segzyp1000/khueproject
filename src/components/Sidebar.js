@@ -29,16 +29,16 @@ const Sidebar = () => {
   const toggleSidebar = () => setIsOpen(!isOpen);
 
   const normalLink = "flex dark:text-gray-200 items-center gap-5 pl-4 pb-2.5 rounded-lg text-md text-[#0D0D12] m-2";
-  const iconOnlyLink = "flex dark:text-gray-200 justify-center items-center p-3 rounded-lg text-md text-[#0D0D12] m-2";
+  const iconOnlyLink = "flex dark:text-gray-200 items-center p-3 rounded-lg text-md text-[#0D0D12] m-2";
 
   return (
     <div
-      className={`fixed min-h-full md:relative top-0 left-0 dark:bg-gray-800 border-r dark:border-gray-500 transition-all duration-300 ${
+      className={`fixed h-full md:relative top-0 left-0 dark:bg-gray-800 border-r dark:border-gray-500 transition-all duration-300 ${
         isOpen ? "w-[15rem]" : "w-[4rem]"
-      } z-50`}
+      } z-{100%}`}
     >
       {/* Top Section */}
-      <div className="dark:bg-slate-800 bg-white flex items-center shadow-3xl border-r border-black p-4 border-b  dark:border-gray-500">
+      <div className="dark:bg-slate-800 bg-white flex items-center shadow-4xl border-r p-4 border-b border-b-gray-200  dark:border-gray-500">
         <Link to="/">
           <img
             src={Logo}
@@ -57,7 +57,7 @@ const Sidebar = () => {
       </div>
 
       {/* Menu Section */}
-      <div className="dark:bg-slate-800  overflow-auto min-h-full border-r space-y-5">
+      <div className="dark:bg-slate-800 bg-white overflow-auto max-h-full border-r space-y-5">
         <p className={`m-3 text-[#A4ABBB] ${isOpen ? "block" : "hidden"}`}>Main Menu</p>
         {links.map((item) => (
           <div key={item.title}>
