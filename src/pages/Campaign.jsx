@@ -43,7 +43,7 @@ function Campaign() {
               <span>🔻</span>
               <span className="text-[1.4rem]">Sort by</span>
             </Button>
-            <Button className="hidden md:block">
+            <Button>
               <span>🔍</span>
               <span className="text-[1.4rem] ">Filter</span>
             </Button>

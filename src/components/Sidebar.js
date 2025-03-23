@@ -33,9 +33,9 @@ const Sidebar = () => {
 
   return (
     <div
-      className={`fixed h-full md:relative top-0 left-0 dark:bg-gray-800 border-r dark:border-gray-500 transition-all duration-300 ${
+      className={`fixed z-50 min-h-full md:relative top-0 left-0 dark:bg-gray-800 border-r dark:border-gray-200 transition-all duration-300 ${
         isOpen ? "w-[15rem]" : "w-[4rem]"
-      } z-{100%}`}
+      }`}
     >
       {/* Top Section */}
       <div className="dark:bg-slate-800 bg-white flex items-center shadow-4xl border-r p-4 border-b border-b-gray-200  dark:border-gray-500">
@@ -50,7 +50,7 @@ const Sidebar = () => {
         </Link>
         <button
           onClick={toggleSidebar}
-          className="text-gray-899 dark:text-gray-200 p-2 rounded md:block"
+          className="text-gray-800 dark:text-gray-200 p-2 rounded md:block"
         >
           {isOpen ? <MdKeyboardDoubleArrowRight size={20} /> : <FiMenu size={20} />}
         </button>
