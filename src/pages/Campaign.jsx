@@ -99,19 +99,21 @@ function Campaign() {
 
         {/* Search and Actions */}
         <form className="flex gap-[5rem] w-full px-[3rem]">
-          <div className="flex items-center w-full text-[1.4rem] dark:text-black">
-            <span className="relative left-[2.5rem] z-10">🔍</span>
+          <div className="relative w-full">
+            <span className="absolute left-[1.5rem] top-1/2 transform -translate-y-1/2 text-gray-500">
+              🔍
+            </span>
             <input
               type="text"
               placeholder="Search a campaign..."
               value={searchQuery}
               onChange={handleSearchChange}
-              className="rounded-[1.5rem] border w-full px-[4rem] py-[0.8rem] focus:outline-none focus:ring-1 focus:ring-gray-400"
+              className="w-full pl-[4rem] pr-[1.5rem] py-[0.8rem] rounded-[1.5rem] border focus:outline-none focus:ring-1 text-gray-800 focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-200"
             />
           </div>
 
           <select
-            className="border text-[1.4rem] focus:outline-none focus:ring-1 focus:ring-gray-400 rounded-[1.5rem] dark:text-black"
+            className="border text-[1.4rem] focus:outline-none focus:ring-1 focus:ring-gray-700 rounded-[1.5rem] text-gray-800 dark:bg-gray-800 dark:text-gray-200"
             value={selectedAction}
             onChange={handleActionChange}
           >

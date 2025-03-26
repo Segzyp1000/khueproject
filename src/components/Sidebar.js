@@ -81,7 +81,7 @@ const Sidebar = () => {
             onClick={toggleSidebar}
             className="text-gray-800 dark:text-gray-200 p-2 rounded md:block"
           >
-            {isOpen ? <MdKeyboardDoubleArrowRight size={20} /> : <FiMenu size={20} />}
+            {isOpen ? <MdKeyboardDoubleArrowRight size={20}  className="hidden md:block" /> : <FiMenu size={20} />}
           </button>
         </div>
 
