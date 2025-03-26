@@ -51,8 +51,8 @@ const Sidebar = () => {
 
   const toggleSidebar = () => setIsOpen(!isOpen);
 
-  const normalLink = "flex dark:text-gray-200 items-center gap-5 pl-4 pb-2.5 rounded-lg text-md text-[#0D0D12] m-2";
-  const iconOnlyLink = "flex dark:text-gray-200 items-center p-3 rounded-lg text-md text-[#0D0D12] m-2";
+  const normalLink = "flex dark:text-gray-300 items-center gap-5 pl-4 pb-2.5 rounded-lg text-md text-[#666d80] m-2";
+  const iconOnlyLink = "flex dark:text-gray-300 items-center p-3 rounded-lg text-md text-[#666d80] m-2";
 
   return (
     <>
@@ -64,7 +64,7 @@ const Sidebar = () => {
       {/* Sidebar */}
       <div
         ref={sidebarRef}
-        className={`fixed z-50 bg-white min-h-full top-0 left-0 dark:bg-gray-800 border-r dark:border-gray-500 transition-all duration-300 ${
+        className={`fixed z-50  bg-white min-h-full top-0 left-0 dark:bg-gray-800 border-r dark:border-gray-500 transition-all duration-300 ${
           isOpen ? "w-[15rem]" : "w-[4rem]"
         } md:relative`}
       >

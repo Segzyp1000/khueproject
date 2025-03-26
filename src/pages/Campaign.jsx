@@ -61,7 +61,7 @@ function Campaign() {
         </div>
 
         {/* Campaign Statistics */}
-        <div className="flex flex-col gap-[3.2rem] border rounded-[1.2rem] bg-[#F8F3FF] dark:bg-gray-800 w-full p-[1.5rem]">
+        <div className="flex flex-col gap-[3.2rem] border rounded-[1.2rem] bg-gray-300 dark:bg-gray-800 w-full p-[1.5rem]">
           <span>🔒</span>
           <div className="grid grid-cols-5 gap-x-[3.2rem] font-serif">
             {[
@@ -108,12 +108,12 @@ function Campaign() {
               placeholder="Search a campaign..."
               value={searchQuery}
               onChange={handleSearchChange}
-              className="w-full pl-[4rem] pr-[1.5rem] py-[0.8rem] rounded-[1.5rem] border focus:outline-none focus:ring-1 text-gray-800 focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-200"
+              className="w-full pl-[4rem] pr-[1.5rem] py-[0.8rem] rounded-[1.5rem] border focus:outline-none focus:ring-1 text-gray-800 focus:ring-gray-800 dark:bg-gray-800 dark:text-gray-200"
             />
           </div>
 
           <select
-            className="border text-[1.4rem] focus:outline-none focus:ring-1 focus:ring-gray-700 rounded-[1.5rem] text-gray-800 dark:bg-gray-800 dark:text-gray-200"
+            className="border text-[1.4rem] focus:outline-none focus:ring-1 focus:ring-gray-800 rounded-[1.5rem] text-gray-800 dark:bg-gray-800 dark:text-gray-200"
             value={selectedAction}
             onChange={handleActionChange}
           >

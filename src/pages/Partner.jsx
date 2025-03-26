@@ -50,7 +50,7 @@ function Partner() {
           <tbody>
             {partnerData.map((item) => (
               <tr className="bg-white dark:bg-gray-800">
-                <td className="py-5 px-2 text-left text-[#0D0D12] dark:text-gray-200 font-semibold border-b border-gray-300">
+                <td className="py-5 px-2 text-left text-[#666d80] dark:text-gray-400 font-semibold border-b border-gray-300">
                   {item.company}
                 </td>
                 <td className="py-5 px-2 text-left text-[#666d80] dark:text-gray-400 font-semibold border-b border-gray-300">
