@@ -7,7 +7,7 @@ import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 992);
   const sidebarRef = useRef(null);
   const location = useLocation();
 
