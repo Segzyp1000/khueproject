@@ -22,7 +22,7 @@ function Partner() {
               <span className="text-[1.4rem]">Filter</span>
             </Button>
           </div>
-          <div className="flex md:gap-x-[0.8rem] gap-x-[10rem] ">
+          <div className="flex gap-x-[0.8rem]  ">
             <Button>
               <span>🔄</span>
               <span className="text-[1.4rem]">Export</span>
