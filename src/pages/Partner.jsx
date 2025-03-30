@@ -41,7 +41,7 @@ function Partner() {
             <tr>
               <th className="py-3 px-3 text-left">Company</th>
               <th className="py-3 px-3 text-left">Category</th>
-              <th className="py-3 px-3 text-left hidden md:block">Domain</th>
+              <th className="py-3 px-3 text-left">Domain</th>
               <th className="py-3 px-3 text-left">Location</th>
               <th className="py-3 px-3 text-left">Status</th>
               <th className="py-3 px-3 text-left"></th>
@@ -56,7 +56,7 @@ function Partner() {
                 <td className="py-5 px-2 text-left text-[#666d80] dark:text-gray-400 font-semibold border-b border-gray-300">
                   {item.category}
                 </td>
-                <td className="py-5 px-2 text-left text-[#666d80] dark:text-gray-400 font-semibold border-b border-gray-300 hidden md:block">
+                <td className="py-5 px-2 text-left text-[#666d80] dark:text-gray-400 font-semibold border-b border-gray-300">
                   {item.domain}
                 </td>
                 <td className="py-5 px-2 text-left text-[#666d80] dark:text-gray-400 font-semibold border-b border-gray-300">

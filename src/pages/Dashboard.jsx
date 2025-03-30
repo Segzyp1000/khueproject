@@ -28,6 +28,10 @@ ChartJS.register(
 );
 
 const Dashboard = () => {
+  const options = {
+    responsive: true,
+    maintainAspectRatio: false,
+  };
   // Sample data
   const barData = {
     labels: ["Active Users", "Partners Added", "Campaigns", "Referrals"],
@@ -92,7 +96,6 @@ const Dashboard = () => {
         label: "Revenue Growth",
         data: [100, 150, 200, 250],
         backgroundColor: "#FF6384",
-        
       },
     ],
   };
@@ -104,33 +107,31 @@ const Dashboard = () => {
         {/* KPI Metrics */}
 
         <div className="md:col-span-1 col-span-3 ">
-          <Bar data={barData} />
+          <Bar data={barData} options={options} />
         </div>
         <div className="md:col-span-1 col-span-3 ">
-          <Line data={lineData} />
+          <Line data={lineData} options={options} />
         </div>
         <div className="md:col-span-1 col-span-3 ">
-          <Bubble data={bubbleData} />
+          <Bubble data={bubbleData} options={options} />
         </div>
 
-       
         <div className="md:col-span-1 col-span-3 ">
-          <Scatter data={scatterData} />
+          <Scatter data={scatterData} options={options} />
         </div>
 
         {/* User Overview & Most Active Pages */}
         <div className="md:col-span-1 col-span-3 ">
-          <Pie data={pieData} />
+          <Pie data={pieData} options={options} />
         </div>
         <div className="md:col-span-2 col-span-3 ">
-          <Bubble data={bubbleData} />
+          <Bubble data={bubbleData} options={options} />
         </div>
 
         {/* Visitor Insights */}
         <div className="md:col-span-1 col-span-3 ">
-          <Doughnut data={doughnutData} />
+          <Doughnut data={doughnutData} options={options} />
         </div>
-       
       </section>
     </Layout>
   );
