@@ -91,12 +91,12 @@ const User = () => {
         </table>
 
         {/* Numbered Pagination Controls */}
-        <div className="flex justify-center items-center gap-2 mt-6">
+        <div className="flex justify-end items-center gap-2 mt-6">
           {/* Previous Button */}
           <button
             onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
             disabled={currentPage === 1}
-            className="px-4 py-2 bg-gray-300 rounded disabled:opacity-50"
+            className="px-4 py-2 bg-gray-200 dark:text-gray-800 rounded disabled:opacity-50"
           >
             Previous
           </button>
@@ -106,8 +106,10 @@ const User = () => {
             <button
               key={num}
               onClick={() => setCurrentPage(num)}
-              className={`px-4 py-2 rounded ${
-                num === currentPage ? "bg-blue-600 text-white" : "bg-gray-300"
+              className={`px-4 py-2 rounded-full object-contain ${
+                num === currentPage
+                  ? "bg-blue-600 text-white"
+                  : "bg-gray-200 dark:text-gray-800 "
               }`}
             >
               {num}
@@ -120,7 +122,7 @@ const User = () => {
               setCurrentPage((prev) => Math.min(prev + 1, totalPages))
             }
             disabled={currentPage === totalPages}
-            className="px-4 py-2 bg-gray-300 rounded disabled:opacity-50"
+            className="px-4 py-2 bg-gray-200 dark:text-gray-800  rounded disabled:opacity-50"
           >
             Next
           </button>

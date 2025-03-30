@@ -8,7 +8,7 @@ const names = [
   "Yetunde Akinyemi", "Ugochukwu Eze", "Ruth Obinna", "Seun Ayodele", "Esther Agbo",
   "Tobi Adesina", "Chukwuemeka Okeke", "Halima Lawal", "Kelvin Iroegbu", "Patience Osei",
   "Daniel Abiodun", "Eunice Akpan", "Ahmed Garba", "Tope Falana", "Sarah Okwu",
-  "Ebuka Chike", "Abigail Musa", "Taiwo Salami", "Moses Oyewole", "Caroline Ebi"
+  "Ebuka Chike", "Abigail Musa", "Taiwo Salami", "Moses Oyewole", "Caroline Ebi", "Jennifer Eze", "Segun Olowoyeye", "Akeju Oladimeji", "Enoch Olugbenga", "Niffy Aina", "kayode Black", "Gideon Apari"
 ];
 
 const photos = [
@@ -33,7 +33,7 @@ const generateEmail = (name) => {
   return `${name.toLowerCase().replace(/\s/g, "")}@${provider}`;
 };
 
-export const UserData = Array.from({ length: 50 }, (_, index) => {
+export const UserData = Array.from({ length: 70 }, (_, index) => {
   const randomPhoto = photos[index % photos.length];
   const randomEmploymentStatus = employmentStatusOptions[Math.floor(Math.random() * employmentStatusOptions.length)];
   const name = names[index % names.length];
