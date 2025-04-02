@@ -5,9 +5,8 @@ import { RiBarChartBoxLine } from "react-icons/ri";
 import { CiHome } from "react-icons/ci"
 import { BsBookmarkCheck } from "react-icons/bs";
 import { CiStickyNote } from "react-icons/ci"; 
-import { FaUserPlus } from "react-icons/fa6";
-import { IoGridOutline } from "react-icons/io5";
-import { FaHeadphones } from "react-icons/fa";
+
+
 
 export const links = [
   {
@@ -64,31 +63,4 @@ export const links = [
      
     ]
   },
-];
-
-export const Links2 = [
-  {
-    Links2: [
-      {
-        name: 'Manage Team',
-        icon: <FaUserPlus/>
-      }
-    ]
-  },
-  {
-    Links2: [
-      {
-        name: 'Audit Log',
-        icon: <IoGridOutline/>
-      }
-    ]
-  },
-  {
-    Links2: [
-      {
-        name: 'Help & First Step',
-        icon: <FaHeadphones/>
-      }
-    ]
-  }
 ];
