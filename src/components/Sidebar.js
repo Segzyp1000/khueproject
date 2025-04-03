@@ -10,6 +10,7 @@ const Sidebar = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 992);
   const sidebarRef = useRef(null);
   const location = useLocation();
+  const activeLinkRef = useRef(null); // Reference for the active link
 
   // Handle screen resize
   useEffect(() => {
@@ -49,10 +50,14 @@ const Sidebar = () => {
     }
   }, [isOpen, isMobile]);
 
-  const toggleSidebar = () => setIsOpen(!isOpen);
+  // Scroll to the active link
+  useEffect(() => {
+    if (activeLinkRef.current) {
+      activeLinkRef.current.scrollIntoView({ behavior: "smooth", value:"scroll", block: "center" });
+    }
+  }, [location.pathname]);
 
-  const normalLink = "flex dark:text-gray-300 items-center gap-5 pl-4 pb-2.5 rounded-lg text-md text-[#666d80] m-2";
-  const iconOnlyLink = "flex dark:text-gray-300 items-center p-3 rounded-lg text-md text-[#666d80] m-2";
+  const toggleSidebar = () => setIsOpen(!isOpen);
 
   return (
     <>
@@ -64,7 +69,7 @@ const Sidebar = () => {
       {/* Sidebar */}
       <div
         ref={sidebarRef}
-        className={`fixed z-50  bg-white min-h-full top-0 left-0 dark:bg-gray-800 border-r dark:border-gray-500 transition-all duration-300 ${
+        className={`fixed z-50 bg-white min-h-full top-0 left-0 dark:bg-gray-800 border-r dark:border-gray-500 transition-all duration-300 ${
           isOpen ? "w-[15rem]" : "w-[4rem]"
         } md:relative`}
       >
@@ -81,24 +86,33 @@ const Sidebar = () => {
             onClick={toggleSidebar}
             className="text-gray-800 dark:text-gray-200 p-2 rounded md:block"
           >
-            {isOpen ? <MdKeyboardDoubleArrowRight size={20}  className="hidden md:block" /> : <FiMenu size={20} />}
+            {isOpen ? <MdKeyboardDoubleArrowRight size={20} className="hidden md:block" /> : <FiMenu size={20} />}
           </button>
         </div>
 
         {/* Menu Section */}
-        <div className="dark:bg-slate-800 bg-white overflow-auto max-h-full space-y-5">
-          <p className={`m-3 text-[#A4ABBB] ${isOpen ? "block" : "hidden"}`}>Main Menu</p>
+        <div className="dark:bg-gray-800 bg-white overflow-auto max-h-full space-y-5">
+          <p className={`m-3 text-gray-600 ${isOpen ? "block" : "hidden"}`}>Main Menu</p>
           {links.map((item) => (
             <div key={item.title}>
-              <p className={`text-[#A4ABBB] m-3 mt-4 uppercase ${isOpen ? "block" : "hidden"}`}>
+              <p className={`text-gray-600 m-3 mt-4 uppercase ${isOpen ? "block" : "hidden"}`}>
                 {item.title}
               </p>
               {item.links.map((link) => (
                 <NavLink
                   to={`/${link.name}`}
                   key={link.name}
-                  className={isOpen ? normalLink : iconOnlyLink}
+                  className={({ isActive }) =>
+                    `flex items-center gap-5 p-2 rounded-lg text-md m-2 ${
+                      isActive ? "bg-blue-500 text-white" : "dark:text-gray-300 text-[#666d80]"
+                    }`
+                  }
                   onClick={() => isMobile && setIsOpen(false)} // Close on navigation (mobile only)
+                  ref={(navLink) => {
+                    if (`location.pathname === /${link.name}`) {
+                      activeLinkRef.current = navLink;
+                    }
+                  }}
                 >
                   {link.icon}
                   {isOpen && <span className="capitalize">{link.name}</span>}
