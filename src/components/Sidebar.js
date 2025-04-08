@@ -103,8 +103,8 @@ const Sidebar = () => {
                   to={`/${link.name}`}
                   key={link.name}
                   className={({ isActive }) =>
-                    `flex items-center gap-5 p-2 rounded-lg text-md m-2 ${
-                      isActive ? "bg-blue-500 text-white" : "dark:text-gray-300 text-[#666d80]"
+                    `flex items-center gap-5 px-3 py-2  rounded-lg te xt-md m-2  ${
+                      isActive ? " hover:text-blue-400 text-blue-400" : "dark:text-gray-200 dark:hover:text-blue-400"
                     }`
                   }
                   onClick={() => isMobile && setIsOpen(false)} // Close on navigation (mobile only)
