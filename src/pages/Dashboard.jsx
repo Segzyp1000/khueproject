@@ -103,7 +103,7 @@ const Dashboard = () => {
   return (
     <Layout title="Dashboard">
       <h2 className="text-lg font-semibold mt-5">👋 Hey, Kevin.</h2>
-      <section className=" dark:bg-gray-800  grid md:grid-cols-4 grid-cols-1 gap-10 space-y-7 mt-10 mb-5">
+      <section className=" dark:bg-gray-800  grid md:grid-cols-4 grid-cols-1 gap-10  space-y-7 gap-y-12 mt-10 mb-5">
         {/* KPI Metrics */}
 
         <div className="md:col-span-1 col-span-3 ">

@@ -1,133 +1,140 @@
-import React, { useState } from "react";
+import React from "react";
+import { Bar, Line, Pie, Doughnut, Scatter, Bubble } from "react-chartjs-2";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  PointElement,
+  LineElement,
+  ArcElement,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
 import Layout from "../components/Layout";
-import Button from "../components/Button";
-import CampaignTable from "../components/CampaignTable";
-import { data as initialCampaignData } from "../data/campaignData";
 
-function Campaign() {
-  // Manage form inputs
-  const [searchQuery, setSearchQuery] = useState("");
-  const [selectedAction, setSelectedAction] = useState("");
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  PointElement,
+  LineElement,
+  ArcElement,
 
-  // Handle Search Input Change
-  const handleSearchChange = (e) => {
-    setSearchQuery(e.target.value);
+  Title,
+  Tooltip,
+  Legend
+);
+
+const Dashboard = () => {
+  const options = {
+    responsive: true,
+    maintainAspectRatio: false,
+  };
+  // Sample data
+  const barData = {
+    labels: ["Active Users", "Partners Added", "Campaigns", "Referrals"],
+    datasets: [
+      {
+        label: "Count",
+        data: [1500, 320, 80, 450],
+        backgroundColor: ["#36A2EB", "#FFF", "#FFCE56", "#4BC0C0"],
+      },
+    ],
   };
 
-  // Handle Action Selection Change
-  const handleActionChange = (e) => {
-    setSelectedAction(e.target.value);
+  const lineData = {
+    labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+    datasets: [
+      {
+        label: "User Engagement",
+        data: [120, 200, 250, 300, 400, 600, 700],
+        borderColor: "#FF6384",
+        fill: false,
+      },
+    ],
   };
 
-  // Filter campaigns based on search and action
-  const filteredCampaigns = initialCampaignData.filter((campaign) => {
-    const matchesSearch = campaign.campaignName
-      .toLowerCase()
-      .includes(searchQuery.toLowerCase());
+  const pieData = {
+    labels: ["Home", "Dashboard", "Settings", "Profile"],
+    datasets: [
+      {
+        label: "Most Active Pages",
+        data: [40, 30, 20, 10],
+        backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0"],
+      },
+    ],
+  };
 
-    const matchesAction =
-      selectedAction === "" ||
-      (selectedAction === "admin" && campaign.createdBy === "Admin") ||
-      (selectedAction === "user" && campaign.createdBy !== "Admin");
+  const doughnutData = {
+    labels: ["Chrome", "Safari", "Firefox", "Edge"],
+    datasets: [
+      {
+        label: "Browser Usage",
+        data: [60, 20, 10, 10],
+        backgroundColor: ["#36A2EB", "#FF6384", "#FFCE56", "#4BC0C0"],
+      },
+    ],
+  };
 
-    return matchesSearch && matchesAction;
-  });
+  const scatterData = {
+    labels: ["Jan", "Feb", "Mar", "Apr", "May"],
+    datasets: [
+      {
+        label: "User Growth",
+        data: [100, 150, 200, 250, 300],
+        backgroundColor: "#36A2EB",
+      },
+    ],
+  };
+
+  const bubbleData = {
+    labels: ["Q1", "Q2", "Q3", "Q4"],
+    datasets: [
+      {
+        label: "Revenue Growth",
+        data: [100, 150, 200, 250],
+        backgroundColor: "#FF6384",
+      },
+    ],
+  };
 
   return (
-    <Layout title="Campaign">
-      <section className="flex flex-col justify-between items-center gap-y-[1.4rem] py-[2rem] px-5">
-        {/* Action Buttons */}
-        <div className="gap-[2rem] flex justify-between items-center w-full">
-          <div className="hidden md:flex gap-x-[0.8rem]">
-            <Button>
-              <span>🔻</span>
-              <span className="text-[1.4rem]">Sort by</span>
-            </Button>
-            <Button>
-              <span>🔍</span>
-              <span className="text-[1.4rem] ">Filter</span>
-            </Button>
-          </div>
-          <div className="flex md:gap-x-[0.8rem] gap-x-[10rem] ">
-            <Button>
-              <span>🔄</span>
-              <span className="text-[1.4rem]">Import/Export</span>
-            </Button>
-            <Button type="secondary">
-              <span className="text-[2rem]">&#43;</span>
-              <span className="text-[1.4rem]">Create campaign</span>
-            </Button>
-          </div>
+    <Layout title="Dashboard">
+      <h2 className="text-lg font-semibold mt-5">👋 Hey, Kevin.</h2>
+      <section className=" dark:bg-gray-800  grid md:grid-cols-4 grid-cols-1 gap-10 space-y-7 mt-10 mb-5">
+        {/* KPI Metrics */}
+
+        <div className="md:col-span-1 col-span-3 ">
+          <Bar data={barData} options={options} />
+        </div>
+        <div className="md:col-span-1 col-span-3 ">
+          <Line data={lineData} options={options} />
+        </div>
+        <div className="md:col-span-1 col-span-3 ">
+          <Bubble data={bubbleData} options={options} />
         </div>
 
-        {/* Campaign Statistics */}
-        <div className="flex flex-col gap-[3.2rem] border rounded-[1.2rem] bg-gray-300 dark:bg-gray-800 w-full p-[1.5rem]">
-          <span>🔒</span>
-          <div className="grid grid-cols-5 gap-x-[3.2rem] font-serif">
-            {[
-              { label: "Total", value: initialCampaignData.length },
-              {
-                label: "Running",
-                value: initialCampaignData.filter((c) => c.status === "Running")
-                  .length,
-              },
-              {
-                label: "Scheduled",
-                value: initialCampaignData.filter(
-                  (c) => c.status === "Scheduled"
-                ).length,
-              },
-              {
-                label: "Expired",
-                value: initialCampaignData.filter((c) => c.status === "Expired")
-                  .length,
-              },
-              {
-                label: "Disabled",
-                value: initialCampaignData.filter(
-                  (c) => c.status === "Disabled"
-                ).length,
-              },
-            ].map((item, index) => (
-              <div key={index}>
-                <p className="text-[1.4rem]">{item.label}</p>
-                <p className="text-[2rem]">{item.value}</p>
-              </div>
-            ))}
-          </div>
+        <div className="md:col-span-1 col-span-3 ">
+          <Scatter data={scatterData} options={options} />
         </div>
 
-        {/* Search and Actions */}
-        <form className="flex gap-[5rem] w-full px-[3rem]">
-          <div className="relative w-full">
-            <span className="absolute left-[1.5rem] top-1/2 transform -translate-y-1/2 text-gray-500">
-              🔍
-            </span>
-            <input
-              type="text"
-              placeholder="Search a campaign..."
-              value={searchQuery}
-              onChange={handleSearchChange}
-              className="w-full pl-[4rem] pr-[1.5rem] py-[0.8rem] rounded-[1.5rem] border focus:outline-none focus:ring-1 text-gray-800 focus:ring-gray-800 dark:bg-gray-800 dark:text-gray-200"
-            />
-          </div>
+        {/* User Overview & Most Active Pages */}
+        <div className="md:col-span-1 col-span-3 ">
+          <Pie data={pieData} options={options} />
+        </div>
+        <div className="md:col-span-2 col-span-3 ">
+          <Bubble data={bubbleData} options={options} />
+        </div>
 
-          <select
-            className="border text-[1.4rem] focus:outline-none focus:ring-1 focus:ring-gray-800 rounded-[1.5rem] text-gray-800 dark:bg-gray-800 dark:text-gray-200"
-            value={selectedAction}
-            onChange={handleActionChange}
-          >
-            <option value="">Actions</option>
-            <option value="admin">Created by Admin</option>
-            <option value="user">Created by Partner</option>
-          </select>
-        </form>
+        {/* Visitor Insights */}
+        <div className="md:col-span-1 col-span-3 ">
+          <Doughnut data={doughnutData} options={options} />
+        </div>
       </section>
-
-      {/* Campaign Table */}
-      <CampaignTable campaignData={filteredCampaigns} />
     </Layout>
   );
-}
+};
 
-export default Campaign;
+export default Dashboard;

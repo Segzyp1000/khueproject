@@ -23,7 +23,8 @@ const User = () => {
 
   return (
     <Layout title="Users">
-      <section className="flex flex-col gap-y-6 py-8 min-h-full">
+      <div className="bg-white dark:bg-gray-800 max-h-full"></div>
+      <section className="flex flex-col gap-y-6 py-8">
         <div className="flex gap-x-4">
           <Button>
             <span>🔄</span>

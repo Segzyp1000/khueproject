@@ -10,8 +10,8 @@ function Partner() {
 
   return (
     <Layout title="Partner (20)">
-      <section className="flex flex-col justify-between md:justify-normal items-center gap-y-[1.4rem] py-[2rem] min-h-full">
-        <div className=" gap-[1rem] flex md:justify-between items-center min-w-full">
+      <section className="flex flex-col justify-between md:justify-normal items-center gap-y-[1.4rem] py-[2rem]">
+        <div className=" gap-[1rem] flex md:justify-between items-center w-full">
           <div className=" hidden md:flex md:gap-x-[0.8rem] gap-x-[0.2rem]">
             <Button>
               <span>🔻</span>
@@ -35,8 +35,8 @@ function Partner() {
         </div>
       </section>
 
-      <div className="overflow-x-auto p-6 ">
-        <table className="min-w-full bg-white dark:bg-gray-800 shadow-md rounded-lg overflow-hidden">
+      <div className="dark:bg-gray-800 overflow-x-auto p-6 max-h-full">
+        <table className="w-full bg-white dark:bg-gray-800 shadow-md rounded-lg overflow-hidden">
           <thead className="bg-[#EEEFF2] dark:bg-gray-700 text-[#2B0058] uppercase dark:text-white text-sm">
             <tr>
               <th className="py-3 px-3 text-left">Company</th>

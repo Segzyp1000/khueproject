@@ -5,9 +5,14 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  @apply dark:bg-gray-800;
+}
+
+
+
 @layer base {
   body {
-    
     overflow: auto;
     margin: 0;
     padding: 0;

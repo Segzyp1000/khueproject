@@ -18,8 +18,8 @@ import PartnerDetails from './pages/PartnerDetails';
 
 export default function App() {
   return (
-    
-      <BrowserRouter className="dark:bg-gray-600">
+      <>
+      <BrowserRouter className="dark:bg-gray-800">
         <Routes>
           <Route element={<AppLayout />}>
             <Route index element={<Navigate replace to={'dashboard'} />} />
@@ -36,5 +36,6 @@ export default function App() {
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
+      </>
   );
 }
