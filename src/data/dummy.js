@@ -26,13 +26,14 @@ export const links = [
         icon: <FiShoppingBag/>
       },
       {
-        name: 'partner',
-        icon: <IoMdContacts />
-      },
-      {
         name: 'campaign',
         icon: <BsBookmarkCheck  />
       },
+      {
+        name: 'partner',
+        icon: <IoMdContacts />
+      },
+      
       {
         name: 'referral',
         icon: <CiStickyNote />

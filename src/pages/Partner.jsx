@@ -50,19 +50,19 @@ function Partner() {
           <tbody>
             {partnerData.map((item) => (
               <tr className="bg-white dark:bg-gray-800">
-                <td className="py-5 px-2 text-left text-[#666d80] dark:text-gray-400 font-semibold border-b border-gray-300">
+                <td className="py-5 px-2 text-left text-gray-700 dark:text-gray-200 font-semibold border-b border-gray-300">
                   {item.company}
                 </td>
-                <td className="py-5 px-2 text-left text-[#666d80] dark:text-gray-400 font-semibold border-b border-gray-300">
+                <td className="py-5 px-2 text-left text-gray-700 dark:text-gray-200 font-semibold border-b border-gray-300">
                   {item.category}
                 </td>
-                <td className="py-5 px-2 text-left text-[#666d80] dark:text-gray-400 font-semibold border-b border-gray-300">
+                <td className="py-5 px-2 text-left text-gray-700 dark:text-gray-200 font-semibold border-b border-gray-300">
                   {item.domain}
                 </td>
-                <td className="py-5 px-2 text-left text-[#666d80] dark:text-gray-400 font-semibold border-b border-gray-300">
+                <td className="py-5 px-2 text-left text-gray-700 dark:text-gray-200 font-semibold border-b border-gray-300">
                   {item.location}
                 </td>
-                <td className="py-5 px-2 text-left text-[#666d80] dark:text-gray-400 font-semibold border-b border-gray-300 ">
+                <td className="py-5 px-2 text-left text-gray-700 dark:text-gray-200 font-semibold border-b border-gray-300 ">
                   <span
                     className={`px-3 py-1 rounded-full text-xs font-semibold ${
                       item.status === "Active"
@@ -74,10 +74,10 @@ function Partner() {
                   </span>
                 </td>
 
-                <td className="py-2 font-semibold border-b border-gray-300 dark:text-gray-400">
+                <td className="py-2 font-semibold border-b border-gray-300 dark:text-gray-200">
                   <div>
                     <SlOptions
-                      className="md:block hidden text-gray-600 dark:text-gray-400 hover:text-gray-900 cursor-pointer"
+                      className="md:block hidden text-gray-600 dark:text-gray-200 hover:text-gray-900 cursor-pointer"
                       onClick={() =>
                         setShowButton((prevShowButton) => ({
                           ...prevShowButton,
