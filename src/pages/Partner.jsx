@@ -35,7 +35,7 @@ function Partner() {
         </div>
       </section>
 
-      <div className="dark:bg-gray-800 overflow-x-auto p-6 max-h-full">
+      <div className="dark:bg-gray-800 overflow-x-auto p-6">
         <table className="w-full bg-white dark:bg-gray-800 shadow-md rounded-lg overflow-hidden">
           <thead className="bg-[#EEEFF2] dark:bg-gray-700 text-[#2B0058] uppercase dark:text-white text-sm">
             <tr>
