@@ -74,7 +74,7 @@ const Sidebar = () => {
         } md:relative`}
       >
         {/* Top Section */}
-        <div className="dark:bg-slate-600 bg-white flex items-center shadow-4xl border-r p-4 border-b border-b-gray-200 dark:border-gray-500">
+        <div className="dark:bg-slate-700 bg-white flex items-center shadow-4xl border-r p-4 border-b border-b-gray-200 dark:border-gray-500">
           <Link to="/">
             <img
               src={Logo}

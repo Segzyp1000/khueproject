@@ -9,6 +9,7 @@ import {
   Legend,
   PointElement,
   LineElement,
+  ArcElement,
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
 import Layout from "../components/Layout";
@@ -21,7 +22,8 @@ ChartJS.register(
   Tooltip,
   Legend,
   PointElement,
-  LineElement
+  LineElement,
+  ArcElement
 );
 
 const Dashboard = () => {
@@ -38,7 +40,7 @@ const Dashboard = () => {
       {
         label: "Campaigns Created",
         data: [10, 25, 20, 40, 30, 50],
-        backgroundColor: "rgba(59, 130, 246, 0.6)", // blue-500
+        backgroundColor: "rgba(59, 130, 246, 0.6)",
         borderRadius: 6,
       },
     ],
@@ -57,13 +59,96 @@ const Dashboard = () => {
       y: {
         beginAtZero: true,
         ticks: {
-          color: "#9CA3AF", // gray-400
+          color: "#9CA3AF",
         },
       },
       x: {
         ticks: {
           color: "#9CA3AF",
         },
+      },
+    },
+  };
+
+  const pieData = {
+    labels: ["Email", "Social Media", "SMS"],
+    datasets: [
+      {
+        label: "Distribution",
+        data: [40, 35, 25],
+        backgroundColor: [
+          "rgba(59, 130, 246, 0.7)",
+          "rgba(34, 197, 94, 0.7)",
+          "rgba(234, 179, 8, 0.7)",
+        ],
+        borderWidth: 0,
+      },
+    ],
+  };
+
+  const pieOptions = {
+    plugins: {
+      legend: {
+        display: true,
+        position: "bottom",
+      },
+    },
+  };
+
+  const lineData = {
+    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+    datasets: [
+      {
+        label: "User Engagement",
+        data: [400, 600, 750, 900, 1100, 1400],
+        fill: true,
+        borderColor: "rgba(59, 130, 246, 1)",
+        backgroundColor: "rgba(59, 130, 246, 0.2)",
+        tension: 0.4,
+      },
+    ],
+  };
+
+  const lineOptions = {
+    responsive: true,
+    plugins: {
+      legend: {
+        display: true,
+        position: "top",
+      },
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        ticks: { color: "#9CA3AF" },
+      },
+      x: {
+        ticks: { color: "#9CA3AF" },
+      },
+    },
+  };
+
+  const doughnutData = {
+    labels: ["Clicked", "Ignored", "Bounced"],
+    datasets: [
+      {
+        label: "Click Rate",
+        data: [60, 30, 10],
+        backgroundColor: [
+          "rgba(34, 197, 94, 0.7)",
+          "rgba(239, 68, 68, 0.7)",
+          "rgba(234, 179, 8, 0.7)",
+        ],
+        borderWidth: 0,
+      },
+    ],
+  };
+
+  const doughnutOptions = {
+    plugins: {
+      legend: {
+        display: true,
+        position: "bottom",
       },
     },
   };
@@ -100,7 +185,6 @@ const Dashboard = () => {
               Chat/Notification Area
             </h2>
             <div className="flex-1 overflow-y-auto space-y-2">
-              {/* Mock chat messages */}
               <div className="p-3 rounded-md bg-gray-100 dark:bg-gray-800 text-sm">
                 🔔 New campaign created: "Summer Promo"
               </div>
@@ -111,6 +195,37 @@ const Dashboard = () => {
                 📅 "Autumn Blast" scheduled for next week.
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Grid - Additional Charts */}
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+          {/* Pie Chart */}
+          <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md">
+            <h2 className="text-lg font-semibold mb-4 text-gray-700 dark:text-gray-100">
+              Campaign Type Distribution
+            </h2>
+            <Bar data={pieData} options={pieOptions} type="pie" />
+          </div>
+
+          {/* Line Chart */}
+          <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md">
+            <h2 className="text-lg font-semibold mb-4 text-gray-700 dark:text-gray-100">
+              User Engagement
+            </h2>
+            <Bar data={lineData} options={lineOptions} type="line" />
+          </div>
+
+          {/* Doughnut Chart */}
+          <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md">
+            <h2 className="text-lg font-semibold mb-4 text-gray-700 dark:text-gray-100">
+              Click Through Breakdown
+            </h2>
+            <Bar
+              data={doughnutData}
+              options={doughnutOptions}
+              type="doughnut"
+            />
           </div>
         </div>
       </section>
