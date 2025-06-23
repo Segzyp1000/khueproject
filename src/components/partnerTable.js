@@ -1,81 +1,80 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { SlOptions } from "react-icons/sl";
 import { Link } from "react-router-dom";
 
+function PartnerTable({ data }) {
+  const [showButtons, setShowButtons] = useState({});
 
+  const toggleButton = (id) => {
+    setShowButtons((prev) => ({
+      ...prev,
+      [id]: !prev[id],
+    }));
+  };
 
-
-function  PartnerTable ({partnerData}) {
-  const [showButton, setShowButton] = useState(false);
-
-return (
-  <div className="overflow-x-auto p-6">
-  <table className="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
-    <thead className="bg-[#EEEFF2] text-[#2B0058] uppercase text-sm">
-      <tr>
-        <th className="py-3 px-6 text-left">Company</th>
-        <th className="py-3 px-6 text-left">Category</th>
-        <th className="py-3 px-6 text-left">Domain</th>
-        <th className="py-3 px-6 text-left">Location</th>
-        <th className="py-3 px-6 text-left">Status</th>
-        <th className="py-3 px-6 text-left"></th>
-      </tr>
-    </thead>
-    <tbody>
-      {partnerData?.map(item => (
-        <tr className="bg-white">
-          <td className="py-5 px-4 text-left text-[#0D0D12] font-semibold border-b border-gray-300">
-            {item.company}
-          </td>
-          <td className="py-5 px-4 text-left text-[#666d80] font-semibold border-b border-gray-300">
-            {item.category}
-          </td>
-          <td className="py-5 px-4 text-left text-[#666d80] font-semibold border-b border-gray-300">
-            {item.domain}
-          </td>
-          <td className="py-5 px-4 text-left text-[#666d80] font-semibold border-b border-gray-300">
-            {item.location}
-          </td>
-          <td className="py-5 px-4 text-left text-[#666d80]  font-semibold border-b border-gray-300">
-            <span
-              className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                item.status === "Active"
-                  ? "text-blue-100 bg-[#4E5FEF]"
-                  : "bg-red-200 text-red-800"
-              }`}
+  return (
+    <div className="overflow-x-auto p-6">
+      <table className="min-w-full bg-white dark:bg-[#1E1E2F] shadow-md rounded-lg overflow-hidden">
+        <thead className="bg-[#EEEFF2] dark:bg-[#2A2A40] text-[#2B0058] dark:text-gray-100 uppercase text-sm">
+          <tr>
+            <th className="py-4 px-6 text-left">Company</th>
+            <th className="py-4 px-6 text-left">Category</th>
+            <th className="py-4 px-6 text-left">Domain</th>
+            <th className="py-4 px-6 text-left">Location</th>
+            <th className="py-4 px-6 text-left">Status</th>
+            <th className="py-4 px-6 text-left">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data?.map((item) => (
+            <tr
+              key={item.id}
+              className="border-b border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-[#2E2E48]"
             >
-              {item.status}
-            </span>
-          </td>
-
-          <td className="py-2 font-semibold border-b border-gray-300">
-            <div>
-              <SlOptions
-                className="text-gray-600 hover:text-gray-900 cursor-pointer"
-                onClick={() =>
-                  setShowButton((prevShowButton) => ({
-                    ...prevShowButton,
-                    [item.id]: !prevShowButton[item.id],
-                  }))
-                }
-              />
-              {showButton[item.id] && (
-                <Link to={`/details/${item.id}`}
-                  className="text-blue-600 hover:text-blue-800"
+              <td className="py-5 px-6 text-[#0D0D12] dark:text-white font-medium">
+                {item.company}
+              </td>
+              <td className="py-5 px-6 text-[#666d80] dark:text-gray-300 font-medium">
+                {item.category}
+              </td>
+              <td className="py-5 px-6 text-[#666d80] dark:text-gray-300 font-medium">
+                {item.domain}
+              </td>
+              <td className="py-5 px-6 text-[#666d80] dark:text-gray-300 font-medium">
+                {item.location}
+              </td>
+              <td className="py-5 px-6">
+                <span
+                  className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                    item.status === "Active"
+                      ? "bg-[#4E5FEF] text-white"
+                      : "bg-red-200 text-red-800 dark:bg-red-800 dark:text-white"
+                  }`}
                 >
-                  <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
-                    View Details
-                  </button>
-                </Link>
-              )}
-            </div>
-          </td>
-        </tr>
-      ))}
-    </tbody>
-  </table>
-</div>
-)
+                  {item.status}
+                </span>
+              </td>
+              <td className="py-5 px-6 relative">
+                <div className="flex items-center gap-2">
+                  <SlOptions
+                    className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white cursor-pointer"
+                    onClick={() => toggleButton(item.id)}
+                  />
+                  {showButtons[item.id] && (
+                    <Link to={`/details/${item.id}`}>
+                      <button className="ml-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold py-2 px-4 rounded transition-all">
+                        View Details
+                      </button>
+                    </Link>
+                  )}
+                </div>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
 }
 
 export default PartnerTable;

@@ -28,7 +28,7 @@ function CampaignTable({ campaignData }) {
   return (
     <table className="w-full  bg-white dark:bg-gray-800 divide-y divide-gray-300 dark:divide-gray-700 text-justify transition-colors duration-300">
       {/* Header */}
-      <thead className="text-gray-400 dark:text-gray-500 uppercase text-md font-medium">
+      <thead className="text-gray-400 dark:text-gray-200 uppercase text-md font-medium">
         <tr>
           <th>
             <input
@@ -75,12 +75,12 @@ function CampaignTable({ campaignData }) {
             </td>
 
             {/* Campaign Details */}
-            <td className="py-5 md:px-1 px-2 text-[#666d80] dark:text-gray-400 font-normal">{data.campaignName}</td>
-            <td className="py-5 md:px-1 px-2 text-[#666d80] dark:text-gray-400 font-normal">{data.createdBy}</td>
-            <td className="py-5 md:px-1 px-2 text-[#666d80] dark:text-gray-400 font-normal">{data.createdAt}</td>
-            <td className="py-5 md:px-1 px-2 text-[#666d80] dark:text-gray-400 font-normal">{data.start}</td>
-            <td className="py-5 md:px-1 px-2 text-[#666d80] dark:text-gray-400 font-normal">{data.end}</td>
-            <td className="py-5 md:px-1 px-2 text-[#666d80] dark:text-gray-400 font-normal md:block hidden">{data.campaignUsage}</td>
+            <td className="py-5 md:px-1 px-2 text-[#666d80] dark:text-gray-200 font-normal">{data.campaignName}</td>
+            <td className="py-5 md:px-1 px-2 text-[#666d80] dark:text-gray-200 font-normal">{data.createdBy}</td>
+            <td className="py-5 md:px-1 px-2 text-[#666d80] dark:text-gray-200 font-normal">{data.createdAt}</td>
+            <td className="py-5 md:px-1 px-2 text-[#666d80] dark:text-gray-200 font-normal">{data.start}</td>
+            <td className="py-5 md:px-1 px-2 text-[#666d80] dark:text-gray-200 font-normal">{data.end}</td>
+            <td className="py-5 md:px-1 px-2 text-[#666d80] dark:text-gray-200 font-normal md:block hidden">{data.campaignUsage}</td>
 
          
            

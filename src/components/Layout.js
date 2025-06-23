@@ -1,5 +1,3 @@
-
-import React from "react";
 import ThemeToggle from "./ThemeToggle";
 import { IoIosContact, IoIosNotifications } from "react-icons/io";
 

@@ -74,12 +74,12 @@ const Sidebar = () => {
         } md:relative`}
       >
         {/* Top Section */}
-        <div className="dark:bg-slate-800 bg-white flex items-center shadow-4xl border-r p-4 border-b border-b-gray-200 dark:border-gray-500">
+        <div className="dark:bg-slate-600 bg-white flex items-center shadow-4xl border-r p-4 border-b border-b-gray-200 dark:border-gray-500">
           <Link to="/">
             <img
               src={Logo}
               alt="logo"
-              className={`object-contain transition-all duration-300 ${isOpen ? "w-[13rem]" : "w-0 opacity-0"}`}
+              className={`object-contain  transition-all duration-300 ${isOpen ? "w-[13rem]" : "w-0 opacity-0"}`}
             />
           </Link>
           <button
@@ -91,11 +91,11 @@ const Sidebar = () => {
         </div>
 
         {/* Menu Section */}
-        <div className="dark:bg-gray-800 bg-white overflow-auto max-h-full space-y-5">
-          <p className={`m-3 text-gray-600 ${isOpen ? "block" : "hidden"}`}>Main Menu</p>
+        <div className="dark:bg-gray-800 dark:text-gray-400 bg-white overflow-auto max-h-full space-y-5">
+          <p className={`m-3 text-gray-400 ${isOpen ? "block" : "hidden"}`}>Main Menu</p>
           {links.map((item) => (
             <div key={item.title}>
-              <p className={`text-gray-600 m-3 mt-4 uppercase ${isOpen ? "block" : "hidden"}`}>
+              <p className={`text-gray-600 dark:text-gray-400 m-3 mt-4 uppercase ${isOpen ? "block" : "hidden"}`}>
                 {item.title}
               </p>
               {item.links.map((link) => (

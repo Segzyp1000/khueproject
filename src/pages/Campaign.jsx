@@ -50,7 +50,7 @@ const Campaign = () => {
             </Button>
             <Button type="secondary">
               <span className="text-[2rem]">&#43;</span>
-              <span className="text-[1.4rem]">Create campaign</span>
+              <span className="text-[1.4rem]">Create</span>
             </Button>
           </div>
         </div>

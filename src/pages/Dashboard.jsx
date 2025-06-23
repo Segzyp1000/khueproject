@@ -1,136 +1,117 @@
 import React from "react";
-import { Bar, Line, Pie, Doughnut, Scatter, Bubble } from "react-chartjs-2";
 import {
   Chart as ChartJS,
   CategoryScale,
   LinearScale,
   BarElement,
-  PointElement,
-  LineElement,
-  ArcElement,
   Title,
   Tooltip,
   Legend,
+  PointElement,
+  LineElement,
 } from "chart.js";
+import { Bar } from "react-chartjs-2";
 import Layout from "../components/Layout";
 
 ChartJS.register(
   CategoryScale,
   LinearScale,
   BarElement,
-  PointElement,
-  LineElement,
-  ArcElement,
-
   Title,
   Tooltip,
-  Legend
+  Legend,
+  PointElement,
+  LineElement
 );
 
 const Dashboard = () => {
-  const options = {
+  const stats = [
+    { title: "Total Campaigns", value: 128, color: "bg-blue-500" },
+    { title: "Running", value: 64, color: "bg-green-500" },
+    { title: "Scheduled", value: 30, color: "bg-yellow-500" },
+    { title: "Expired", value: 34, color: "bg-red-500" },
+  ];
+
+  const chartData = {
+    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+    datasets: [
+      {
+        label: "Campaigns Created",
+        data: [10, 25, 20, 40, 30, 50],
+        backgroundColor: "rgba(59, 130, 246, 0.6)", // blue-500
+        borderRadius: 6,
+      },
+    ],
+  };
+
+  const chartOptions = {
     responsive: true,
-    maintainAspectRatio: false,
-  };
-  // Sample data
-  const barData = {
-    labels: ["Active Users", "Partners Added", "Campaigns", "Referrals"],
-    datasets: [
-      {
-        label: "Count",
-        data: [1500, 320, 80, 450],
-        backgroundColor: ["#36A2EB", "#FFF", "#FFCE56", "#4BC0C0"],
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        mode: "index",
+        intersect: false,
       },
-    ],
-  };
-
-  const lineData = {
-    labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-    datasets: [
-      {
-        label: "User Engagement",
-        data: [120, 200, 250, 300, 400, 600, 700],
-        borderColor: "#FF6384",
-        fill: false,
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        ticks: {
+          color: "#9CA3AF", // gray-400
+        },
       },
-    ],
-  };
-
-  const pieData = {
-    labels: ["Home", "Dashboard", "Settings", "Profile"],
-    datasets: [
-      {
-        label: "Most Active Pages",
-        data: [40, 30, 20, 10],
-        backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0"],
+      x: {
+        ticks: {
+          color: "#9CA3AF",
+        },
       },
-    ],
-  };
-
-  const doughnutData = {
-    labels: ["Chrome", "Safari", "Firefox", "Edge"],
-    datasets: [
-      {
-        label: "Browser Usage",
-        data: [60, 20, 10, 10],
-        backgroundColor: ["#36A2EB", "#FF6384", "#FFCE56", "#4BC0C0"],
-      },
-    ],
-  };
-
-  const scatterData = {
-    labels: ["Jan", "Feb", "Mar", "Apr", "May"],
-    datasets: [
-      {
-        label: "User Growth",
-        data: [100, 150, 200, 250, 300],
-        backgroundColor: "#36A2EB",
-      },
-    ],
-  };
-
-  const bubbleData = {
-    labels: ["Q1", "Q2", "Q3", "Q4"],
-    datasets: [
-      {
-        label: "Revenue Growth",
-        data: [100, 150, 200, 250],
-        backgroundColor: "#FF6384",
-      },
-    ],
+    },
   };
 
   return (
     <Layout title="Dashboard">
-      <h2 className="text-lg font-semibold mt-5">👋 Hey, Kevin.</h2>
-      <section className=" dark:bg-gray-800  grid md:grid-cols-4 grid-cols-1 gap-10  space-y-7 gap-y-12 mt-10 mb-5">
-        {/* KPI Metrics */}
-
-        <div className="md:col-span-1 col-span-3 ">
-          <Bar data={barData} options={options} />
-        </div>
-        <div className="md:col-span-1 col-span-3 ">
-          <Line data={lineData} options={options} />
-        </div>
-        <div className="md:col-span-1 col-span-3 ">
-          <Bubble data={bubbleData} options={options} />
-        </div>
-
-        <div className="md:col-span-1 col-span-3 ">
-          <Scatter data={scatterData} options={options} />
+      <section className="p-6 space-y-6">
+        {/* Grid - 4 Stat Boxes */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {stats.map((item, idx) => (
+            <div
+              key={idx}
+              className={`p-6 rounded-xl text-white shadow-md ${item.color} dark:shadow-lg`}
+            >
+              <h3 className="text-md font-medium">{item.title}</h3>
+              <p className="text-3xl font-bold mt-2">{item.value}</p>
+            </div>
+          ))}
         </div>
 
-        {/* User Overview & Most Active Pages */}
-        <div className="md:col-span-1 col-span-3 ">
-          <Pie data={pieData} options={options} />
-        </div>
-        <div className="md:col-span-2 col-span-3 ">
-          <Bubble data={bubbleData} options={options} />
-        </div>
+        {/* Grid - Chart & Chat */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {/* Chart Box */}
+          <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md">
+            <h2 className="text-lg font-semibold mb-4 text-gray-700 dark:text-gray-100">
+              Campaign Performance
+            </h2>
+            <Bar data={chartData} options={chartOptions} />
+          </div>
 
-        {/* Visitor Insights */}
-        <div className="md:col-span-1 col-span-3 ">
-          <Doughnut data={doughnutData} options={options} />
+          {/* Chat Box (Placeholder) */}
+          <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md flex flex-col">
+            <h2 className="text-lg font-semibold mb-4 text-gray-700 dark:text-gray-100">
+              Chat/Notification Area
+            </h2>
+            <div className="flex-1 overflow-y-auto space-y-2">
+              {/* Mock chat messages */}
+              <div className="p-3 rounded-md bg-gray-100 dark:bg-gray-800 text-sm">
+                🔔 New campaign created: "Summer Promo"
+              </div>
+              <div className="p-3 rounded-md bg-gray-100 dark:bg-gray-800 text-sm">
+                ✅ Campaign "Spring Sale" is now running.
+              </div>
+              <div className="p-3 rounded-md bg-gray-100 dark:bg-gray-800 text-sm">
+                📅 "Autumn Blast" scheduled for next week.
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </Layout>

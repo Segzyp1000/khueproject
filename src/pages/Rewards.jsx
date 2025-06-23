@@ -1,5 +1,5 @@
 const Rewards = () => {
-  return <div>Rewards</div>;
+  return <div className="dark:text-white">Rewards</div>;
 };
 
 export default Rewards;
