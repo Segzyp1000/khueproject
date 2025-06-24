@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -10,8 +9,9 @@ import {
   PointElement,
   LineElement,
   ArcElement,
+  RadialLinearScale,
 } from "chart.js";
-import { Bar } from "react-chartjs-2";
+import { Bar, Line, Pie, Doughnut } from "react-chartjs-2";
 import Layout from "../components/Layout";
 
 ChartJS.register(
@@ -23,7 +23,8 @@ ChartJS.register(
   Legend,
   PointElement,
   LineElement,
-  ArcElement
+  ArcElement,
+  RadialLinearScale
 );
 
 const Dashboard = () => {
@@ -156,7 +157,7 @@ const Dashboard = () => {
   return (
     <Layout title="Dashboard">
       <section className="p-6 space-y-6">
-        {/* Grid - 4 Stat Boxes */}
+        {/* Stat Boxes */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((item, idx) => (
             <div
@@ -169,9 +170,8 @@ const Dashboard = () => {
           ))}
         </div>
 
-        {/* Grid - Chart & Chat */}
+        {/* Main Chart & Chat Box */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {/* Chart Box */}
           <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md">
             <h2 className="text-lg font-semibold mb-4 text-gray-700 dark:text-gray-100">
               Campaign Performance
@@ -179,7 +179,6 @@ const Dashboard = () => {
             <Bar data={chartData} options={chartOptions} />
           </div>
 
-          {/* Chat Box (Placeholder) */}
           <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md flex flex-col">
             <h2 className="text-lg font-semibold mb-4 text-gray-700 dark:text-gray-100">
               Chat/Notification Area
@@ -198,14 +197,14 @@ const Dashboard = () => {
           </div>
         </div>
 
-        {/* Grid - Additional Charts */}
+        {/* Additional Charts */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
           {/* Pie Chart */}
           <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md">
             <h2 className="text-lg font-semibold mb-4 text-gray-700 dark:text-gray-100">
               Campaign Type Distribution
             </h2>
-            <Bar data={pieData} options={pieOptions} type="pie" />
+            <Pie data={pieData} options={pieOptions} />
           </div>
 
           {/* Line Chart */}
@@ -213,7 +212,7 @@ const Dashboard = () => {
             <h2 className="text-lg font-semibold mb-4 text-gray-700 dark:text-gray-100">
               User Engagement
             </h2>
-            <Bar data={lineData} options={lineOptions} type="line" />
+            <Line data={lineData} options={lineOptions} />
           </div>
 
           {/* Doughnut Chart */}
@@ -221,11 +220,7 @@ const Dashboard = () => {
             <h2 className="text-lg font-semibold mb-4 text-gray-700 dark:text-gray-100">
               Click Through Breakdown
             </h2>
-            <Bar
-              data={doughnutData}
-              options={doughnutOptions}
-              type="doughnut"
-            />
+            <Doughnut data={doughnutData} options={doughnutOptions} />
           </div>
         </div>
       </section>

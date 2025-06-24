@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { links } from "../data/dummy";
-import Logo from "../images/logo.png";
+import Logo from "../images/logo.svg";
 import { FiMenu } from "react-icons/fi";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 
@@ -78,8 +78,8 @@ const Sidebar = () => {
           <Link to="/">
             <img
               src={Logo}
-              alt="logo"
-              className={`object-contain  transition-all duration-300 ${isOpen ? "w-[13rem]" : "w-0 opacity-0"}`}
+              alt="company logo"
+              className={`object-contain transition-all duration-300 ${isOpen ? "w-[15rem]" : "w-0 opacity-0"}`}
             />
           </Link>
           <button
@@ -93,8 +93,8 @@ const Sidebar = () => {
         {/* Menu Section */}
         <div className="dark:bg-gray-800 dark:text-gray-400 bg-white overflow-auto max-h-full space-y-5">
           <p className={`m-3 text-gray-400 ${isOpen ? "block" : "hidden"}`}>Main Menu</p>
-          {links.map((item) => (
-            <div key={item.title}>
+          {links.map((item, index) => (
+            <div key={index}>
               <p className={`text-gray-600 dark:text-gray-400 m-3 mt-4 uppercase ${isOpen ? "block" : "hidden"}`}>
                 {item.title}
               </p>
