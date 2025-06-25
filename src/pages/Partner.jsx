@@ -1,7 +1,7 @@
 import Button from "../components/Button";
 import Layout from "../components/Layout";
 import { partnerData } from "../data/partnerData";
-import PartnerTable from "../components/PartnerTable";
+import PartnerTable from "../components/partnerTable";
 
 function Partner() {
   return (
