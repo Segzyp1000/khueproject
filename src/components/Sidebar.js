@@ -1,7 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { links } from "../data/dummy";
-import Logo from "../images/logo.svg";
+import LogoDark from "../images/logo.svg";
+import LogoLight from "../images/logo-light.png";
+import { useTheme } from "../ThemeContext";
 import { FiMenu } from "react-icons/fi";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 
@@ -11,6 +13,8 @@ const Sidebar = () => {
   const sidebarRef = useRef(null);
   const location = useLocation();
   const activeLinkRef = useRef(null); // Reference for the active link
+
+    const { theme } = useTheme(); // get current theme
 
   // Handle screen resize
   useEffect(() => {
@@ -60,69 +64,74 @@ const Sidebar = () => {
   const toggleSidebar = () => setIsOpen(!isOpen);
 
   return (
-    <>
-      {/* Overlay for clicking outside (on mobile only) */}
-      {isMobile && isOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-40" onClick={() => setIsOpen(false)}></div>
+   <div
+  ref={sidebarRef}
+  className={`fixed z-50 bg-white min-h-full top-0 left-0 
+    dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700
+    transition-all duration-300 ease-in-out shadow-lg
+    ${isOpen ? "w-[15rem]" : "w-[4rem]"} md:relative`}
+>
+  {/* Top Section */}
+  <div className="flex items-center justify-between h-[4rem] px-3 border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800">
+    <Link to="/" className="flex items-center">
+      <img
+        src={theme === "light" ? LogoDark : LogoLight}
+        alt="company logo"
+        className={`object-contain transition-all duration-300 ${
+          isOpen ? "w-[9rem] opacity-100" : "w-0 opacity-0"
+        }`}
+      />
+    </Link>
+    <button
+      onClick={toggleSidebar}
+      className="text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg p-2 transition-colors"
+    >
+      {isOpen ? (
+        <MdKeyboardDoubleArrowRight size={22} className="hidden md:block" />
+      ) : (
+        <FiMenu size={22} />
       )}
+    </button>
+  </div>
 
-      {/* Sidebar */}
-      <div
-        ref={sidebarRef}
-        className={`fixed z-50 bg-white min-h-full top-0 left-0 dark:bg-gray-800 border-r dark:border-gray-500 transition-all duration-300 ${
-          isOpen ? "w-[15rem]" : "w-[4rem]"
-        } md:relative`}
-      >
-        {/* Top Section */}
-        <div className="dark:bg-slate-700 bg-white flex items-center shadow-4xl border-r p-4 border-b border-b-gray-200 dark:border-gray-500">
-          <Link to="/">
-            <img
-              src={Logo}
-              alt="company logo"
-              className={`object-contain transition-all duration-300 ${isOpen ? "w-[15rem]" : "w-0 opacity-0"}`}
-            />
-          </Link>
-          <button
-            onClick={toggleSidebar}
-            className="text-gray-800 dark:text-gray-200 p-2 rounded md:block"
+  {/* Menu Section */}
+  <div className="overflow-y-auto max-h-[calc(100%-4rem)] px-2 py-4 space-y-4">
+    <p className={`text-xs font-semibold text-gray-400 uppercase tracking-wider px-2 ${isOpen ? "block" : "hidden"}`}>
+      Main Menu
+    </p>
+    {links.map((item, index) => (
+      <div key={index}>
+        <p className={`text-[11px] font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide px-2 mb-2 ${isOpen ? "block" : "hidden"}`}>
+          {item.title}
+        </p>
+        {item.links.map((link) => (
+          <NavLink
+            to={`/${link.name}`}
+            key={link.name}
+            className={({ isActive }) =>
+              `flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors
+              ${
+                isActive
+                  ? "bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300"
+                  : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-blue-500"
+              }`
+            }
+            onClick={() => isMobile && setIsOpen(false)}
+            ref={(navLink) => {
+              if (`location.pathname === /${link.name}`) {
+                activeLinkRef.current = navLink;
+              }
+            }}
           >
-            {isOpen ? <MdKeyboardDoubleArrowRight size={20} className="hidden md:block" /> : <FiMenu size={20} />}
-          </button>
-        </div>
-
-        {/* Menu Section */}
-        <div className="dark:bg-gray-800 dark:text-gray-400 bg-white overflow-auto max-h-full space-y-5">
-          <p className={`m-3 text-gray-400 ${isOpen ? "block" : "hidden"}`}>Main Menu</p>
-          {links.map((item, index) => (
-            <div key={index}>
-              <p className={`text-gray-600 dark:text-gray-400 m-3 mt-4 uppercase ${isOpen ? "block" : "hidden"}`}>
-                {item.title}
-              </p>
-              {item.links.map((link) => (
-                <NavLink
-                  to={`/${link.name}`}
-                  key={link.name}
-                  className={({ isActive }) =>
-                    `flex items-center gap-5 px-3 py-2  rounded-lg te xt-md m-2  ${
-                      isActive ? " hover:text-blue-400 text-blue-400" : "dark:text-gray-200 dark:hover:text-blue-400"
-                    }`
-                  }
-                  onClick={() => isMobile && setIsOpen(false)} // Close on navigation (mobile only)
-                  ref={(navLink) => {
-                    if (`location.pathname === /${link.name}`) {
-                      activeLinkRef.current = navLink;
-                    }
-                  }}
-                >
-                  {link.icon}
-                  {isOpen && <span className="capitalize">{link.name}</span>}
-                </NavLink>
-              ))}
-            </div>
-          ))}
-        </div>
+            <span className="text-lg">{link.icon}</span>
+            {isOpen && <span className="capitalize">{link.name}</span>}
+          </NavLink>
+        ))}
       </div>
-    </>
+    ))}
+  </div>
+</div>
+
   );
 };
 
