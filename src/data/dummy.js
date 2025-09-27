@@ -1,6 +1,5 @@
 import React from 'react';
 import { FiShoppingBag } from 'react-icons/fi';
-import { IoMdContacts } from 'react-icons/io';
 import { RiBarChartBoxLine } from "react-icons/ri";
 import { CiHome } from "react-icons/ci"
 import { BsBookmarkCheck } from "react-icons/bs";
@@ -29,10 +28,7 @@ export const links = [
         name: 'campaign',
         icon: <BsBookmarkCheck  />
       },
-      {
-        name: 'partner',
-        icon: <IoMdContacts />
-      },
+     
       
       {
         name: 'referral',
@@ -58,10 +54,10 @@ export const links = [
     title: 'Point Management',
     links: [
       {
-        name: 'Rewaard',
+        name: 'reward',
         icon: <RiBarChartBoxLine/>
       }
-     
+    
     ]
   },
 ];

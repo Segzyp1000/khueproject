@@ -101,7 +101,7 @@ const Sidebar = () => {
     </p>
     {links.map((item, index) => (
       <div key={index}>
-        <p className={`text-[11px] font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide px-2 mb-2 ${isOpen ? "block" : "hidden"}`}>
+        <p className={`text-[11px] font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide px-2 mbb-0 md:mb-2  ${isOpen ? "block" : "hidden"}`}> 
           {item.title}
         </p>
         {item.links.map((link) => (

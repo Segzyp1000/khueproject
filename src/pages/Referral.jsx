@@ -67,6 +67,7 @@ const ReferralForm = () => {
             <input
               type="text"
               name="referredName"
+              placeholder="John Doe"
               value={formData.referredName}
               onChange={handleChange}
               required
@@ -83,6 +84,7 @@ const ReferralForm = () => {
               type="email"
               name="referredEmail"
               value={formData.referredEmail}
+              placeholder="example@mail.com"
               onChange={handleChange}
               required
               className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-400 dark:bg-gray-700 dark:border-gray-600"

@@ -56,7 +56,7 @@ const Campaign = () => {
         </div>
 
         {/* Campaign Statistics */}
-        <div className="flex flex-col gap-[3.2rem] border rounded-[1.2rem] bg-gray-300 dark:bg-gray-800 w-full p-[1.5rem]">
+        <div className="flex flex-col gap-[3.2rem] border rounded-[1.2rem] bg-gray-300 dark:text-gray-800  w-full p-[1.5rem]">
           <span>🔒</span>
           <div className="grid grid-cols-5 gap-x-[3.2rem] font-serif">
             {[

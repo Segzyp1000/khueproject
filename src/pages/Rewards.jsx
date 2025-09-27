@@ -1,5 +1,13 @@
+
+import Layout from "../components/Layout";
+
+
 const Rewards = () => {
-  return <div className="dark:text-white">Rewards</div>;
+  return (
+    <Layout title="Rewards">
+      <div className="p-5">work in progres.....</div>
+    </Layout>
+  );
 };
 
 export default Rewards;
