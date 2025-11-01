@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Layout from "../components/Layout";
-import Button from "../components/Button";
+
 import CampaignTable from "../components/CampaignTable";
 import { data as initialCampaignData } from "../data/campaignData";
 
@@ -84,7 +84,7 @@ const Campaign = () => {
             />
           </div>
           <select
-            className="border text-[1.4rem] focus:outline-none focus:ring-1 focus:ring-gray-800 rounded-[1.5rem] text-gray-800 dark:bg-gray-800 dark:text-gray-200"
+            className="border text-[1.4rem] focus:outline-none focus:ring-1 focus:ring-gray-800 rounded-[1.5rem] text-gray-800 dark:bg-gray-800 dark:text-gray-200 "
             value={selectedAction}
             onChange={handleActionChange}
           >

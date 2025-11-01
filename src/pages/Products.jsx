@@ -85,7 +85,8 @@ const Products = () => {
               onChange={(e) =>
                 setNewProduct({ ...newProduct, name: e.target.value })
               }
-              className="w-full p-2 border rounded text-gray-800"
+                        className="border border-gray-300 dark:border-gray-700 rounded-lg p-2 flex-1 focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white"
+
             />
             <input
               type="text"
@@ -94,7 +95,8 @@ const Products = () => {
               onChange={(e) =>
                 setNewProduct({ ...newProduct, category: e.target.value })
               }
-              className="w-full p-2 border rounded text-gray-800"
+                        className="border border-gray-300 dark:border-gray-700 rounded-lg p-2 flex-1 focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white"
+
             />
             <input
               type="number"
@@ -103,7 +105,8 @@ const Products = () => {
               onChange={(e) =>
                 setNewProduct({ ...newProduct, price: e.target.value })
               }
-              className="w-full p-2 border rounded text-gray-800"
+                        className="border border-gray-300 dark:border-gray-700 rounded-lg p-2 flex-1 focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white"
+
             />
             <input
               type="text"
@@ -112,7 +115,8 @@ const Products = () => {
               onChange={(e) =>
                 setNewProduct({ ...newProduct, image: e.target.value })
               }
-              className="w-full p-2 border rounded text-gray-800"
+                        className="border border-gray-300 dark:border-gray-700 rounded-lg p-2 flex-1 focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white"
+
             />
             <input
               type="number"
@@ -121,7 +125,8 @@ const Products = () => {
               onChange={(e) =>
                 setNewProduct({ ...newProduct, stock: e.target.value })
               }
-              className="w-full p-2 border rounded text-gray-800"
+                        className="border border-gray-300 dark:border-gray-700 rounded-lg p-2 flex-1 focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white"
+
             />
           </div>
 

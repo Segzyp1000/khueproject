@@ -83,15 +83,18 @@ const Sidebar = () => {
       />
     </Link>
     <button
-      onClick={toggleSidebar}
-      className="text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg p-2 transition-colors"
-    >
-      {isOpen ? (
-        <MdKeyboardDoubleArrowRight size={22} className="hidden md:block" />
-      ) : (
-        <FiMenu size={22} />
-      )}
-    </button>
+  onClick={toggleSidebar}
+  className={`flex items-center justify-center w-10 h-10 rounded-lg transition-colors duration-200
+  text-gray-600 dark:text-gray-300
+  hover:bg-gray-100 dark:hover:bg-gray-800
+  ${isOpen ? "bg-transparent" : "bg-transparent"}`}
+>
+  {isOpen ? (
+    <MdKeyboardDoubleArrowRight size={22} className="hidden md:block" />
+  ) : (
+    <FiMenu size={22} />
+    )}
+</button>
   </div>
 
   {/* Menu Section */}
@@ -112,7 +115,7 @@ const Sidebar = () => {
               `flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors
               ${
                 isActive
-                  ? "bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300"
+                  ? "bg-blue-100 dark:bg-blue-900 text-blue-600  dark:text-blue-300"
                   : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-500 hover:text-blue-500"
               }`
             }

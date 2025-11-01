@@ -43,7 +43,9 @@ const Stores = () => {
 
     if (!name || !location) {
       setError("Store name and location are required.");
+       setTimeout(() => setError(""), 3000);
       return;
+      
     }
 
     if (
