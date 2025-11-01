@@ -1,97 +1,128 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Layout from "../components/Layout";
-import Button from "../components/Button";
 
 const Stores = () => {
-  const [stores, setStores] = useState([
-    { name: "Apple", location: "Global" },
-    { name: "Best Buy", location: "US" },
-    { name: "Samsung Experience Stores", location: "Global" },
-    { name: "Sony Square NYC", location: "US" },
-    { name: "Sonos", location: "Global" },
-    { name: "Yodobashi Camera", location: "Japan" },
-    { name: "Bic Camera Inc.", location: "Japan" },
-    { name: "GAME", location: "UK" },
-    { name: "Smeg London", location: "UK" },
-    { name: "Comcast", location: "US" },
-    { name: "Lowe's and b8ta", location: "US" },
-    { name: "Google at Flatiron", location: "US" },
-    { name: "Spiritland", location: "UK" },
-    { name: "HARMAN", location: "Global" },
-  ]);
+  const [stores, setStores] = useState(() => {
+    const saved = localStorage.getItem("stores");
+    return saved
+      ? JSON.parse(saved)
+      : [
+          { name: "Apple", location: "Global" },
+          { name: "Best Buy", location: "US" },
+          { name: "Samsung Experience Stores", location: "Global" },
+          { name: "Sony Square NYC", location: "US" },
+          { name: "Sonos", location: "Global" },
+          { name: "Yodobashi Camera", location: "Japan" },
+          { name: "Bic Camera Inc.", location: "Japan" },
+          { name: "GAME", location: "UK" },
+          { name: "Smeg London", location: "UK" },
+          { name: "Comcast", location: "US" },
+          { name: "Lowe's and b8ta", location: "US" },
+          { name: "Google at Flatiron", location: "US" },
+          { name: "Spiritland", location: "UK" },
+          { name: "HARMAN", location: "Global" },
+        ];
+  });
 
   const [storeName, setStoreName] = useState("");
   const [storeLocation, setStoreLocation] = useState("");
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
 
-  const handleAddStore = () => {
-    console.log("Attempting to add store:", storeName, storeLocation);
+  useEffect(() => {
+    localStorage.setItem("stores", JSON.stringify(stores));
+  }, [stores]);
 
-    // Validate input
-    if (!storeName.trim() || !storeLocation.trim()) {
+  const handleAddStore = (e) => {
+    e.preventDefault();
+    setError("");
+    setSuccess("");
+
+    const name = storeName.trim();
+    const location = storeLocation.trim();
+
+    if (!name || !location) {
       setError("Store name and location are required.");
-      console.log("Validation failed: missing store name or location");
       return;
     }
 
-    // Prevent duplicates (case-insensitive)
     if (
       stores.some(
-        (store) => store.name.toLowerCase() === storeName.toLowerCase().trim()
+        (s) => s.name.toLowerCase() === name.toLowerCase()
       )
     ) {
       setError("This store already exists.");
-      console.log("Duplicate store found:", storeName);
       return;
     }
 
-    // Add the new store
-    const newStore = { name: storeName.trim(), location: storeLocation.trim() };
+    const newStore = { name, location };
     setStores([...stores, newStore]);
-    console.log("Store added:", newStore);
-
-    // Clear inputs and error
     setStoreName("");
     setStoreLocation("");
-    setError("");
+    setSuccess("Store added successfully!");
+
+    setTimeout(() => setSuccess(""), 3000);
   };
 
   return (
     <Layout title="Stores">
-      <div className="max-w-md mx-auto p-4">
-        {/* Error Message */}
-        {error && <p className="text-red-500">{error}</p>}
+      <div className="max-w-3xl mx-auto p-6 bg-white dark:bg-gray-900 rounded-xl shadow-lg">
+        <h2 className="text-2xl font-semibold mb-6 text-center dark:text-white">
+          Store Directory
+        </h2>
 
         {/* Add Store Form */}
-        <div className="flex gap-2 mb-4">
+        <form onSubmit={handleAddStore} className="flex flex-col md:flex-row gap-3 mb-6">
           <input
             type="text"
             placeholder="Store Name"
             value={storeName}
             onChange={(e) => setStoreName(e.target.value)}
-            className="border rounded-md p-2 w-full"
+            className="border border-gray-300 dark:border-gray-700 rounded-lg p-2 flex-1 focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white"
           />
           <input
             type="text"
             placeholder="Location"
             value={storeLocation}
             onChange={(e) => setStoreLocation(e.target.value)}
-            className="border rounded-md p-2 w-full"
+            className="border border-gray-300 dark:border-gray-700 rounded-lg p-2 flex-1 focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white"
           />
-          <Button type="secondary" onClick={handleAddStore}>
-            Add
-          </Button>
-        </div>
+
+          {/* Simple native button */}
+          <button
+            type="submit"
+            className="px-4 py-2 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition"
+          >
+            Add Store
+          </button>
+        </form>
+
+        {/* Feedback Messages */}
+        {error && (
+          <p className="text-red-500 text-center font-medium mb-2">{error}</p>
+        )}
+        {success && (
+          <p className="text-green-500 text-center font-medium mb-2">{success}</p>
+        )}
 
         {/* Store List */}
-        <ul>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
           {stores.map((store, index) => (
-            <li key={index} className="flex items-center justify-between mb-2">
-              <span className="text-lg">{store.name}</span>
-              <span className="text-gray-600">{store.location}</span>
-            </li>
+            <div
+              key={index}
+              className="flex justify-between items-center border border-gray-200 dark:border-gray-700 rounded-lg p-4 hover:shadow-md transition-shadow dark:bg-gray-800"
+            >
+              <div>
+                <h3 className="font-semibold text-lg dark:text-white">
+                  {store.name}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400">
+                  {store.location}
+                </p>
+              </div>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     </Layout>
   );

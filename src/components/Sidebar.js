@@ -95,13 +95,13 @@ const Sidebar = () => {
   </div>
 
   {/* Menu Section */}
-  <div className="overflow-y-auto max-h-[calc(100%-4rem)] px-2 py-4 space-y-4">
+  <div className="overflow-y-auto max-h-[calc(100%-4rem)] p-4 space-y-4">
     <p className={`text-xs font-semibold text-gray-400 uppercase tracking-wider px-2 ${isOpen ? "block" : "hidden"}`}>
       Main Menu
     </p>
     {links.map((item, index) => (
       <div key={index}>
-        <p className={`text-[11px] font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide px-2 mbb-0 md:mb-2  ${isOpen ? "block" : "hidden"}`}> 
+        <p className={`text-[11px] font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide px-2 mb-0 md:mb-2  ${isOpen ? "block" : "hidden"}`}> 
           {item.title}
         </p>
         {item.links.map((link) => (
@@ -113,7 +113,7 @@ const Sidebar = () => {
               ${
                 isActive
                   ? "bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300"
-                  : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-blue-500"
+                  : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-500 hover:text-blue-500"
               }`
             }
             onClick={() => isMobile && setIsOpen(false)}

@@ -24,19 +24,6 @@ const User = () => {
   return (
     <Layout title="Users">
       <div className="bg-white dark:bg-gray-800 max-h-full"></div>
-      <section className="flex flex-col gap-y-6 py-8">
-        <div className="flex gap-x-4">
-          <Button>
-            <span>🔄</span>
-            <span className="text-lg">Export</span>
-          </Button>
-          <Button type="secondary">
-            <span className="text-xl">+</span>
-            <span className="text-lg">Add User</span>
-          </Button>
-        </div>
-      </section>
-
       <div className="overflow-x-auto p-6">
         <table className="min-w-full bg-white dark:bg-gray-800 shadow-md rounded-lg overflow-hidden">
           <thead className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white text-sm uppercase">

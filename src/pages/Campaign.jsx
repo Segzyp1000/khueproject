@@ -31,30 +31,7 @@ const Campaign = () => {
   return (
     <Layout title="Campaign">
       <section className="flex flex-col justify-between items-center gap-y-[1.4rem] py-[2rem] px-5">
-        {/* Action Buttons */}
-        <div className="gap-[2rem] flex justify-between items-center w-full">
-          <div className="hidden md:flex gap-x-[0.8rem]">
-            <Button>
-              <span>🔻</span>
-              <span className="text-[1.4rem]">Sort by</span>
-            </Button>
-            <Button>
-              <span>🔍</span>
-              <span className="text-[1.4rem] ">Filter</span>
-            </Button>
-          </div>
-          <div className="flex md:gap-x-[0.8rem] gap-x-[10rem] ">
-            <Button>
-              <span>🔄</span>
-              <span className="text-[1.4rem]">Import/Export</span>
-            </Button>
-            <Button type="secondary">
-              <span className="text-[2rem]">&#43;</span>
-              <span className="text-[1.4rem]">Create</span>
-            </Button>
-          </div>
-        </div>
-
+    
         {/* Campaign Statistics */}
         <div className="flex flex-col gap-[3.2rem] border rounded-[1.2rem] bg-gray-300 dark:text-gray-800  w-full p-[1.5rem]">
           <span>🔒</span>
