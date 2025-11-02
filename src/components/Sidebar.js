@@ -115,8 +115,8 @@ const Sidebar = () => {
               `flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors
               ${
                 isActive
-                  ? "bg-blue-100 dark:bg-blue-900 text-blue-600  dark:text-blue-300"
-                  : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-500 hover:text-blue-500"
+                  ? " text-blue-600  dark:text-blue-400"
+                  : "text-gray-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-500 "
               }`
             }
             onClick={() => isMobile && setIsOpen(false)}
