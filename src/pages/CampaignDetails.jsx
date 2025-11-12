@@ -1,5 +1,4 @@
 // src/pages/CampaignDetails.jsx
-import React from "react";
 import { useParams, Link } from "react-router-dom";
 import Layout from "../components/Layout";
 import { data as campaigns } from "../data/campaignData";
