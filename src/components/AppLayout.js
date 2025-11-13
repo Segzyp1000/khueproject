@@ -24,7 +24,7 @@ const AppLayout = () => {
       <div
         className={`flex-1 min-h-screen transition-all duration-300 ${
           isMobile
-            ? "ml-20"
+            ? "ml-[4rem]"
             : isSidebarOpen
             ? "ml-[15rem]"
             : "ml-[4rem]"

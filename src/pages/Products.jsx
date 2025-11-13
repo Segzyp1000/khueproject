@@ -68,9 +68,7 @@ const Products = () => {
   return (
     <Layout title="Product List">
       <div className="max-w-6xl mx-auto p-6">
-        <h2 className="text-2xl font-bold mb-6 text-gray-800 dark:text-white">
-          Products
-        </h2>
+        
 
         {/* ✅ Add Product Section */}
         <div className="mb-10 bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-md">
