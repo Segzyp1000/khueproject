@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ['Manrope', 'sans-serif'],
-      serif: ['inter', 'serif'],
+      serif: ['Inter', 'serif'],
       mono: ['Poppins', 'monospace'],
     },
     extend: {
@@ -23,7 +23,18 @@ module.exports = {
           900: '#03070F',
         },
       },
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: '1.25rem', // px-5
+          md: '2.5rem',       // px-10
+          lg: '3.75rem',      // px-15
+        },
+        screens: {
+          xl: '87.5rem',      // 1400px
+        },
+      },
     },
   },
-  plugins: [],
+  plugins: [],
 };

@@ -75,7 +75,7 @@ const Products = () => {
           <h3 className="text-lg font-semibold mb-4 text-gray-800 dark:text-white">
             Add Product
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
             <input
               type="text"
               placeholder="Name"

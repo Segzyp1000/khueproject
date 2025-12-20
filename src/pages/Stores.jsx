@@ -68,7 +68,7 @@ const Stores = () => {
 
   return (
     <Layout title="Stores">
-      <div className="max-w-3xl mx-auto p-6 bg-white dark:bg-gray-900 rounded-xl shadow-lg">
+      <div className="max-w-3xl mt-5 mx-auto p-6 bg-white dark:bg-gray-900 rounded-xl shadow-lg">
         <h2 className="text-2xl font-semibold mb-6 text-center dark:text-white">
           Store Directory
         </h2>

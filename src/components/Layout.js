@@ -3,7 +3,7 @@ import ThemeToggle from "./ThemeToggle";
 
 const Layout = ({ children, title }) => {
   return (
-    <div className="min-h-screen bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100 transition-colors duration-300">
+    <div className=" min-h-screen bg-gray-50 text-gray-900 dark:bg-gray-800 dark:text-gray-50 transition-colors duration-300">
       {/* Header */}
       <header className="flex justify-between items-center p-3 border-b border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800">
         <h1 className="text-xl font-semibold">{title}</h1>
